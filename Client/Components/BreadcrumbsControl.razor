@@ -1,0 +1,52 @@
+﻿@namespace codeXpert.Theme.AdminLTE.Client.Components
+@inherits ThemeControlBase
+
+@if (BreadCrumbPages.Any())
+{
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/"><i class="icon-link oi oi-home me-1"></i></a>
+            </li>
+
+            @foreach (var p in BreadCrumbPages)
+            {
+                if (p.PageId == PageState.Page.PageId)
+                {
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <i class="icon-link @p.Icon me-2" aria-hidden="true"></i> @p.Name
+                    </li>
+                }
+                else
+                {
+                    <li class="breadcrumb-item">
+                        @if (p.IsClickable)
+                        {
+                            <a href="@NavigateUrl(p.Path)"><i class="icon-link @p.Icon me-2" aria-hidden="true"> </i>@p.Name</a>
+                        }
+                        else
+                        {
+                            <i class="icon-link @p.Icon me-2" aria-hidden="true"></i> @p.Name
+                        }
+
+                    </li>
+                }
+            }
+        </ol>
+    </nav>
+}
+
+@code {
+
+    protected IEnumerable<Page> BreadCrumbPages => GetBreadCrumbPages().Reverse().ToList();
+
+    private IEnumerable<Page> GetBreadCrumbPages()
+    {
+        var page = PageState.Page;
+        do
+        {
+            yield return page;
+            page = PageState.Pages.FirstOrDefault(p => page != null && p.PageId == page.ParentId);
+        } while (page != null);
+    }
+}

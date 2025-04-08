@@ -1,0 +1,77 @@
+﻿@inherits MenuBase
+
+@if (MenuPages.Any())
+{
+    <aside id="sidebar" class="app-sidebar @_compact @_shadow @_indent @_small bg-body-secondary">
+        <!--begin::Sidebar Brand-->
+        <div class="sidebar-brand">
+            <!--begin::Brand Link-->
+            @if (PageState.Site.LogoFileId != null)
+            {
+                @if (ShowLogoSwitch)
+                {
+                    <a href="@PageState.Alias.Path" class="brand-link logo-switch">
+                        <!--begin::Brand Image-->
+                        <img class="brand-image-xs logo-xl" src="@Utilities.FileUrl(PageState.Alias, PageState.Site.LogoFileId.Value)" alt="@PageState.Site.Name" />
+                        <img class="brand-image-xl logo-xs" alt="@PageState.Site.Name" src="@Oqtane.Shared.Utilities.FileUrl(PageState.Alias, PageState.Site.FaviconFileId.Value)">
+                    </a>
+                }
+                else
+                {
+                    <a href="@PageState.Alias.Path" class="brand-link">
+                        <!--begin::Brand Image-->
+                        <img class="brand-image" src="@Utilities.FileUrl(PageState.Alias, PageState.Site.LogoFileId.Value)" alt="@PageState.Site.Name" />
+                    </a>
+                }
+            }
+            else
+            {
+                <!--begin::Brand Text-->
+                <span class="brand-text fw-light">@PageState.Site.Name</span>
+                <!--end::Brand Text-->
+            }
+            <!--end::Brand Link-->
+        </div>
+        <!--end::Sidebar Brand-->
+
+        <div class="sidebar-wrapper">
+            <nav class="mt-2">
+                <!--begin::Sidebar Menu-->
+                <SideBarMenu />
+                <!--end::Sidebar Menu-->
+            </nav>
+        </div>
+    </aside>
+}
+
+@code {
+    [Parameter]
+    public bool ShowLogoSwitch { get; set; } = false;
+
+    [Parameter]
+    public bool ShowShadow { get; set; } = false;
+
+    [Parameter]
+    public bool ShowIndent { get; set; } = false;
+
+    [Parameter]
+    public bool ShowCompact { get; set; } = false;
+
+    [Parameter]
+    public bool SmallText { get; set; } = false;
+
+    private string _shadow = string.Empty;
+    private string _indent = string.Empty;
+    private string _compact = string.Empty;
+    private string _small = string.Empty;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        _shadow = ShowShadow ? "shadow" : string.Empty;
+        _indent = ShowIndent ? "nav-indent" : string.Empty;
+        _compact = ShowCompact ? "nav-compact" : string.Empty;
+        _small = SmallText ? "small compact-mode" : string.Empty;
+    }
+}

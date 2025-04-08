@@ -1,0 +1,66 @@
+﻿@namespace codeXpert.Theme.AdminLTE.Client.Components
+@using System.Net
+@inherits ThemeControlBase
+@inject ISettingService SettingService
+@inject IStringLocalizer<Search> Localizer
+@inject NavigationManager NavigationManager
+
+@if (_searchResultsPage != null)
+{
+    <!-- SidebarSearch Form -->
+    <form method="post" class="@_defaultCssClass @CssClass" @formname="@($"SearchForm")" @onsubmit="@PerformSearch" role="search" data-enhance>
+        <div class="input-group">
+            <input type="hidden" name="@Constants.RequestVerificationToken" value="@SiteState.AntiForgeryToken" />
+            @if (AllowTextInput)
+            {
+                <input type="search" name="keywords" maxlength="50"
+                    class="form-control border-end-0 rounded-start"
+                    @bind="_keywords"
+                    placeholder="@Localizer["SearchPlaceHolder"]"
+                    aria-label="Search"
+                    aria-describedby="button-search-id" />
+            }
+            <button class="btn btn-secondary" type="submit" aria-label="Search Button" id="button-search-id"><i class="oi oi-magnifying-glass"></i></button>
+        </div>
+    </form>
+}
+
+@code {
+    private string _defaultCssClass;
+    private Page _searchResultsPage;
+    private string _keywords = "";
+
+    [Parameter]
+    public string CssClass { get; set; }
+
+    [Parameter]
+    public bool AllowTextInput { get; set; } = true; // setting to false will display only the search icon button - not the textbox
+
+    [Parameter]
+    public string SearchResultPagePath { get; set; } = "search"; // setting to "" will disable search
+
+    [SupplyParameterFromForm(FormName = "SearchForm")]
+    public string KeyWords { get => ""; set => _keywords = value; }
+
+    protected override void OnInitialized()
+    {
+        if (bool.Parse(SettingService.GetSetting(PageState.Site.Settings, "Search_Enabled", "True")))
+        {
+            _defaultCssClass = (AllowTextInput) ? "" : "app-search-noinput";
+            // _defaultCssClass = (AllowTextInput) ? "app-search" : "app-search-noinput";
+            if (!string.IsNullOrEmpty(SearchResultPagePath))
+            {
+                _searchResultsPage = PageState.Pages.FirstOrDefault(i => i.Path == SearchResultPagePath);
+            }
+        }
+    }
+
+    private void PerformSearch()
+    {
+        if (_searchResultsPage != null)
+        {
+            var url = NavigateUrl(_searchResultsPage.Path, $"q={WebUtility.UrlEncode(_keywords)}");
+            NavigationManager.NavigateTo(url);
+        }
+    }
+}

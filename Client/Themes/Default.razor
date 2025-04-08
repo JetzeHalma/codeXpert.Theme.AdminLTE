@@ -1,0 +1,359 @@
+@namespace codeXpert.Theme.AdminLTE
+
+@inherits ThemeBase
+@inject NavigationManager NavigationManager
+@inject ISettingService SettingService
+@inject IFileService FileService
+@using codeXpert.Theme.AdminLTE.Client.Components
+@using codeXpert.Theme.AdminLTE.Client.Themes
+@using System.Globalization
+
+<!--begin::App Wrapper-->
+<div class="app-wrapper">
+    <!--begin::Header-->
+    <nav id="header" class="app-header navbar navbar-expand @FixedHeader @ShowBorder bg-body">
+        <!--begin::Start Navbar Links-->
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <!-- begin::Start Navbar Links Left -->
+                <li class="nav-item">
+                    <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"><i class="oi oi-menu"></i></a>
+                </li>
+            </ul>
+
+            <!--begin::End Navbar Links Right -->
+            <ul class="navbar-nav justify-content-end">
+
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    @if (_search)
+                    {
+                        <SearchPanel CssClass="me-2" />
+                    }
+                </li>
+
+                <!-- User Dropdown Menu -->
+                <li class="nav-item dropdown user-menu">
+                    <UserPanel ShowRegister="@_register" ShowLogin="@_login" />
+                </li>
+
+                <!-- Control Panel Menu -->
+                <li class="nav-item">
+                    <ControlPanelButtons ButtonClass="btn-outline-secondary" LanguageDropdownAlignment="@languageDropdownAlignment" />
+                </li>
+
+                <!-- Control Panel Menu -->
+                <li class="nav-item">
+                    <a class="nav-link" data-lte-toggle="fullscreen" href="#" role="button">
+                        <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+                        <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i>
+                    </a>
+                </li>
+            </ul>
+            <!--end::End Navbar Links Right -->
+
+        </div>
+    </nav>
+
+    <SideBar ShowLogoSwitch="@LogoSwitch" ShowShadow="@_sidebarShadow" ShowIndent="@_childIndent" ShowCompact="@_navCompact" SmallText="_smallLogo"/>
+
+    <!--begin::App Main-->
+    <main id="main" class="app-main @SmallBody">
+
+        <Pane Name="Top Full Width" />
+
+        <!--begin::App Content Header-->
+        <div class="app-content-header">
+
+            <!--begin::Container-->
+            <div class="container-fluid">
+
+                <!--begin::Row-->
+                <div class="row">
+                    <div class="col-md-6">
+                        @if (_pagetitle)
+                        {
+                            <!-- ======= Pagetitle ======= -->
+                            <h1 class="pagetitle">@PageState.Page.Name</h1>
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        <div class="breadcrumb float-sm-end">
+                            @if (_breadcrumbs)
+                            {
+                                <!-- ======= Breadcrumbs ======= -->
+                                <BreadcrumbsControl></BreadcrumbsControl>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!--end::Row-->
+
+            </div>
+            <!--end::Container-->
+        </div>
+
+        <!--begin::App Content-->
+        <div class="app-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <Pane Name="@PaneNames.Admin" />
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <Pane Name="Top 100%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <Pane Name="Left 50%" />
+                    </div>
+                    <div class="col-md-6">
+                        <Pane Name="Right 50%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <Pane Name="Left 33%" />
+                    </div>
+                    <div class="col-md-4">
+                        <Pane Name="Center 33%" />
+                    </div>
+                    <div class="col-md-4">
+                        <Pane Name="Right 33%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <Pane Name="Left Outer 25%" />
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <Pane Name="Left Inner 25%" />
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <Pane Name="Right Inner 25%" />
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <Pane Name="Right Outer 25%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <Pane Name="Left 25%" />
+                    </div>
+                    <div class="col-md-6">
+                        <Pane Name="Center 50%" />
+                    </div>
+                    <div class="col-md-3">
+                        <Pane Name="Right 25%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <Pane Name="Left Sidebar 66%" />
+                    </div>
+                    <div class="col-lg-5">
+                        <Pane Name="Right Sidebar 33%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <Pane Name="Left Sidebar 33%" />
+                    </div>
+                    <div class="col-lg-7">
+                        <Pane Name="Right Sidebar 66%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <Pane Name="Bottom 100%" />
+                    </div>
+                </div>
+            </div>
+            <Pane Name="Bottom Full Width" />
+        </div>
+
+    </main>
+    <!--end::App Main-->
+
+    <!--begin::Footer-->
+    <footer class="app-footer @FixedFooter @SmallFooter">
+
+        <div class="row">
+            <div class="col-md-4">
+                <Pane Name="Footer Left 33%" />
+            </div>
+            <div class="col-md-4">
+                <Pane Name="Footer Center 33%" />
+            </div>
+            <div class="col-md-4">
+                <Pane Name="Footer Right 33%" />
+            </div>
+        </div>
+
+        <div class="row">
+            <!--begin::To the end-->
+            <div class="float-end d-none d-sm-inline">
+                <Pane Name="Footer End" />
+            </div>
+            <!--end::To the end-->
+            <!--begin::Copyright-->
+            <div class="copyright">
+                <Pane Name="Footer Copyright" />
+            </div>
+            <!--end::Copyright-->
+        </div>
+
+    </footer>
+    <!--end::Footer-->
+
+    <div id="preloader"></div>
+
+    <ScrollToTop />
+
+</div>
+<AdminControlPanel ButtonClass="btn-outline-secondary" ContainerClass="offcanvas offcanvas-end" BodyClass="offcanvas-body overflow-auto" />
+
+@code {
+
+    public override string Name => "Default";
+    public override string Panes => PaneNames.Admin + ",Top Full Width,Top 100%,Left 50%,Right 50%,Left 33%,Center 33%,Right 33%,Left Outer 25%,Left Inner 25%,Right Inner 25%,Right Outer 25%,Left 25%,Center 50%,Right 25%,Left Sidebar 66%,Right Sidebar 33%,Left Sidebar 33%,Right Sidebar 66%,Bottom 100%,Bottom Full Width,Footer Left 33%,Footer Center 33%,Footer Right 33%,Footer End,Footer Copyright";
+
+    private bool _login = true;
+    private bool _register = true;
+    private bool _search = true;
+    private string _themeColor = "light";
+    private bool _pagetitle = false;
+    private bool _breadcrumbs = false;
+    private bool _compact = false;
+    private bool _showBorder = false;
+    private string _sidebar = string.Empty;
+    private bool _childIndent = false;
+    private bool _sidebarShadow = false;
+    private bool _fixedHeader = false;
+    private bool _fixedSidebar = false;
+    private bool _fixedFooter = false;
+    private bool _collapsedSidebar = false;
+    private bool _navCompact = false;
+
+    private bool _smallBody = false;
+    private bool _smallNavbar = false;
+    private bool _smallFooter = false;
+    private bool _smallLogo = false;
+
+    private string SidebarLayout = string.Empty;
+    private bool LogoSwitch = false;
+    private string ShowBorder = string.Empty;
+    private string FixedHeader = string.Empty;
+    private string FixedFooter = string.Empty;
+
+    private string SmallFooter = string.Empty;
+    private string SmallBody = string.Empty;
+    private string SmallNavbar = string.Empty;
+
+    private string displayname = string.Empty;
+    private string languageDropdownAlignment = "left";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+
+        var interop = new JSInterop(JSRuntime);
+
+        // Load main theme js
+        await interop.Load();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        try
+        {
+            var settings = SettingService.MergeSettings(PageState.Site.Settings, PageState.Page.Settings);
+            _login = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Login", "true"));
+            _register = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Register", "true"));
+            _search = bool.Parse(SettingService.GetSetting(PageState.Site.Settings, GetType().Namespace + ":Search", "True"));
+            _pagetitle = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Pagetitle", "true"));
+            _breadcrumbs = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Breadcrumbs", "true"));
+            _themeColor = SettingService.GetSetting(settings, GetType().Namespace + ":ThemeColor", string.Empty);
+            _compact = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Compact", "false"));
+            _showBorder = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":ShowBorder", "false"));
+            _sidebar = SettingService.GetSetting(settings, GetType().Namespace + ":Sidebar", string.Empty);
+            _collapsedSidebar = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":CollapsedSidebar", "false"));
+            _childIndent = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":ChildIndent", "false"));
+            _sidebarShadow = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":SidebarShadow", "false"));
+            _fixedHeader = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":DropdownLegacy", "false"));
+            _fixedSidebar = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":FixedSidebar", "false"));
+            _fixedFooter = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":FixedFooter", "false"));
+            _navCompact = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":NavCompact", "false"));
+            _smallBody = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":SmallBody", "false"));
+            _smallNavbar = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":SmallNavbar", "false"));
+            _smallFooter = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":SmallFooter", "false"));
+            _smallLogo = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":SmallLogo", "false"));
+
+            // Header
+            FixedHeader = _fixedHeader ? "sticky-top" : string.Empty;
+            SmallNavbar = _smallNavbar ? "small" : string.Empty;
+            ShowBorder = _showBorder ? string.Empty : "border-bottom-0";
+
+            // Footer
+            FixedFooter = _fixedFooter ? "sticky-bottom" : string.Empty;
+            SmallFooter = _smallFooter ? "small" : string.Empty;
+
+            // Body
+            SmallBody = _smallBody ? "small" : string.Empty;
+
+            // Sidebar layout
+            SidebarLayout = _fixedSidebar ? "layout-fixed " : string.Empty;
+            SidebarLayout = SidebarLayout + _sidebar;
+            SidebarLayout = SidebarLayout + (_collapsedSidebar ? " sidebar-collapse " : string.Empty);
+            SidebarLayout = SidebarLayout + " bg-body-tertiary";
+            SidebarLayout = SidebarLayout + (_compact ? " compact-mode" : string.Empty);
+
+            LogoSwitch = _sidebar.Contains("logoswitch") ? true : false;            
+
+            var interop = new JSInterop(JSRuntime);
+
+            string rtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft?"rtl":"ltr";
+
+            // Add RTL
+            if(rtl == "rtl")
+            {
+                // Remove stylesheets
+                await interop.RemoveLink("adminlte-theme");
+
+                // load css
+                await interop.IncludeLink("adminlte-theme", "stylesheet", $"/Themes/codeXpert.Theme.AdminLTE/assets/vendor/AdminLTE/adminlte.rtl.css", "text/css", "", "", "");
+                await interop.IncludeLink("adminlte-theme", "stylesheet", $"/Themes/codeXpert.Theme.AdminLTE/assets/css/Theme.css", "text/css", "", "", "");
+
+                // Set direction
+                await JSRuntime.InvokeVoidAsync("document.body.setAttribute", "dir", "rtl");
+            }
+            else
+            {
+                // Remove stylesheets
+                await interop.RemoveLink("adminlte-theme");
+
+                // load css
+                 await interop.IncludeLink("adminlte-theme", "stylesheet", $"/Themes/codeXpert.Theme.AdminLTE/assets/vendor/AdminLTE/adminlte.css", "text/css", "", "", "");
+                 await interop.IncludeLink("adminlte-theme", "stylesheet", $"/Themes/codeXpert.Theme.AdminLTE/assets/css/Theme.css", "text/css", "", "", "");
+
+                // Remove direction
+                await JSRuntime.InvokeVoidAsync("document.body.removeAttribute", "dir");
+            }
+
+            // Set AdminLTE theme color
+            await JSRuntime.InvokeVoidAsync("document.body.setAttribute", "data-bs-theme", _themeColor);
+
+            // Add AdminLTE classes for this skin
+            await JSRuntime.InvokeVoidAsync("document.body.setAttribute", "class", SidebarLayout);
+        }
+        catch
+        {
+            // error loading theme settings
+        }
+    }
+}

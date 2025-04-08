@@ -1,0 +1,347 @@
+@namespace codeXpert.Theme.AdminLTE
+@inherits ModuleBase
+@implements Oqtane.Interfaces.ISettingsControl
+@inject ISettingService SettingService
+@attribute [OqtaneIgnore]
+
+<div class="container">
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="style" ResourceKey="Style" ResourceType="@resourceType" HelpText="Specify the style how the module should use">Style?</Label>
+        <div class="col-sm-9">
+            <select id="style" class="form-select" @bind="@_style">
+                <option value="default">Default</option>
+                <option value="card">Card</option>
+                <option value="hero">Full Width</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="title" ResourceKey="Title" ResourceType="@resourceType" HelpText="Specify if the module title should be displayed">Display Title?</Label>
+        <div class="col-sm-9">
+            <select id="title" class="form-select" @bind="@_title">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="shadow" ResourceKey="Shadow" ResourceType="@resourceType" HelpText="Optionally specify a Shadow for the container">Shadow:</Label>
+        <div class="col-sm-9">
+            <select id="shadow" class="form-select" @bind="@_shadow">
+                <option value="">None</option>
+                <option value="shadow-sm">Small</option>
+                <option value="shadow">Default</option>
+                <option value="shadow-lg">Larger</option>
+            </select>
+        </div>
+    </div>
+    <hr />
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="animation" ResourceKey="Background" ResourceType="@resourceType" HelpText="Optionally specify an Animation style for the container">Animation Style:</Label>
+        <div class="col-sm-9">
+            <select id="animation" class="form-select" @bind="@_animation">
+                <option value="">None</option>
+                <option value="fade-up">Fade up</option>
+                <option value="fade-down">Fade down</option>
+                <option value="fade-right">Fade right</option>
+                <option value="fade-left">Fade left</option>
+                <option value="fade-up-right">Fade up right</option>
+                <option value="fade-up-left">Fade up left</option>
+                <option value="fade-down-right">Fade down right</option>
+                <option value="fade-down-left">Fade down left</option>
+                <option value="flip-left">Flip left</option>
+                <option value="flip-right">Flip right</option>
+                <option value="flip-up">Flip up</option>
+                <option value="flip-down">Flip down</option>
+                <option value="zoom-in">Zoom in</option>
+                <option value="zoom-in-up">Zoom in up</option>
+                <option value="zoom-in-down">Zoom in down</option>
+                <option value="zoom-in-left">Zoom in left</option>
+                <option value="zoom-in-right">Zoom in right</option>
+                <option value="zoom-out">Zoom out</option>
+                <option value="zoom-out-up">Zoom out up</option>
+                <option value="zoom-out-down">Zoom out down</option>
+                <option value="zoom-out-right">Zoom out right</option>
+                <option value="zoom-out-left">Zoom out left</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="duration" ResourceKey="Duration" ResourceType="@resourceType" HelpText="Optionally specify the Duration for the Animation">Animation duration:</Label>
+        <div class="col-sm-9">
+            <select id="duration" class="form-select" @bind="@_duration">
+                <option value="0">None</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+                <option value="600">600</option>
+                <option value="1000">1000</option>
+                <option value="1500">1500</option>
+                <option value="2000">2000</option>
+                <option value="2500">2500</option>
+                <option value="3000">3000</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="delay" ResourceKey="Delay" ResourceType="@resourceType" HelpText="Optionally specify the Delay for the Animation">Animation delay:</Label>
+        <div class="col-sm-9">
+            <select id="duration" class="form-select" @bind="@_delay">
+                <option value="0">None</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+                <option value="600">600</option>
+                <option value="800">800</option>
+                <option value="1000">1000</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="easing" ResourceKey="Easing" ResourceType="@resourceType" HelpText="Optionally specify an Easing style for the container">Easing Style:</Label>
+        <div class="col-sm-9">
+            <select id="easing" class="form-select" @bind="@_easing">
+                <option value="">None</option>
+                <option value="linear">Linear</option>
+                <option value="ease">Ease</option>
+                <option value="ease-in">Ease in</option>
+                <option value="ease-out">Ease out</option>
+                <option value="ease-in-out">Ease in out</option>
+                <option value="ease-in-back">Ease in back</option>
+                <option value="ease-out-back">Ease out back</option>
+                <option value="ease-in-out-back">Ease in out back</option>
+                <option value="ease-in-sine">Ease in sine</option>
+                <option value="ease-out-sine">Ease out sine</option>
+                <option value="ease-in-out-sine">Ease in out sine</option>
+                <option value="ease-in-quad">Ease in quad</option>
+                <option value="ease-out-quad">Ease out quad</option>
+                <option value="ease-in-out-quad">Ease in out quad</option>
+                <option value="ease-in-cubic">Ease in cubic</option>
+                <option value="ease-out-cubic">Ease out cubic</option>
+                <option value="ease-in-out-cubic">Ease in out cubic</option>
+                <option value="ease-in-quart">Ease in-quart</option>
+                <option value="ease-out-quart">Ease out quart</option>
+                <option value="ease-in-out-quart">Ease in out quart</option>
+            </select>
+        </div>
+    </div>
+    <hr />
+
+    @if (_style != "card")          // default & hero
+    {
+        <div class="row mb-1 align-items-center">
+            <Label Class="col-sm-3" For="background" ResourceKey="Background" ResourceType="@resourceType" HelpText="Optionally specify a Background Color for the container">Background Color:</Label>
+            <div class="col-sm-9">
+                <select id="background" class="form-select" @bind="@_background">
+                    <option value="">None</option>
+                    <option value="bg-primary">Primary</option>
+                    <option value="bg-secondary">Secondary</option>
+                    <option value="bg-success">Success</option>
+                    <option value="bg-danger">Danger</option>
+                    <option value="bg-warning">Warning</option>
+                    <option value="bg-info">Info</option>
+                    <option value="bg-light">Light</option>
+                    <option value="bg-dark">Dark</option>
+                    <option value="bg-white">White</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-1 align-items-center">
+            <Label Class="col-sm-3" For="text" ResourceKey="Text" ResourceType="@resourceType" HelpText="Optionally specify a Text Color for the container">Text Color:</Label>
+            <div class="col-sm-9">
+                <select id="text" class="form-select" @bind="@_text">
+                    <option value="">None</option>
+                    <option value="text-primary">Primary</option>
+                    <option value="text-secondary">Secondary</option>
+                    <option value="text-success">Success</option>
+                    <option value="text-danger">Danger</option>
+                    <option value="text-warning">Warning</option>
+                    <option value="text-info">Info</option>
+                    <option value="text-light">Light</option>
+                    <option value="text-dark">Dark</option>
+                    <option value="text-white">White</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-1 align-items-center">
+            <Label Class="col-sm-3" For="border" ResourceKey="Border" ResourceType="@resourceType" HelpText="Optionally specify a Border for the container">Border Color:</Label>
+            <div class="col-sm-9">
+                <select id="border" class="form-select" @bind="@_border">
+                    <option value="">None</option>
+                    <option value="border">Default</option>
+                    <option value="border border-primary">Primary</option>
+                    <option value="border border-secondary">Secondary</option>
+                    <option value="border border-success">Success</option>
+                    <option value="border border-danger">Danger</option>
+                    <option value="border border-warning">Warning</option>
+                    <option value="border border-info">Info</option>
+                    <option value="border border-light">Light</option>
+                    <option value="border border-dark">Dark</option>
+                    <option value="border border-white">White</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-1 align-items-center">
+            <Label Class="col-sm-3" For="rounded" ResourceKey="Rounded" ResourceType="@resourceType" HelpText="Optionally specify a Rounded Border for the container">Rounded Border:</Label>
+            <div class="col-sm-9">
+                <select id="rounded" class="form-select" @bind="@_rounded">
+                    <option value="">No</option>
+                    <option value="rounded">Yes</option>
+                </select>
+            </div>
+        </div>
+    }
+    else
+    {
+        // Card
+        <div class="row mb-1 align-items-center">
+            <Label Class="col-sm-3" For="cardOutline" ResourceKey="CardOutline" ResourceType="@resourceType" HelpText="Optionally specify if the Border for the card shows as outline">Card Outline:</Label>
+            <div class="col-sm-9">
+                <select id="cardOutline" class="form-select" @bind="@_cardOutline">
+                    <option value="">No</option>
+                    <option value="card-outline">Yes</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-1 align-items-center">
+            <Label Class="col-sm-3" For="cardColor" ResourceKey="Background" ResourceType="@resourceType" HelpText="Optionally specify a Color for the card">Card Color:</Label>
+            <div class="col-sm-9">
+                <select id="cardColor" class="form-select" @bind="@_cardColor">
+                    <option value="">None</option>
+                    <option value="card-primary">Primary Header</option>
+                    <option value="card-secondary">Secondary Header</option>
+                    <option value="card-success">Success Header</option>
+                    <option value="card-danger">Danger Header</option>
+                    <option value="card-warning">Warning Header</option>
+                    <option value="card-info">Info Header</option>
+                    <option value="card-light">Light Header</option>
+                    <option value="card-dark">Dark Header</option>
+                    <option value="card-white">White Header</option>
+                    <option value="text-bg-primary">Primary</option>
+                    <option value="text-bg-secondary">Secondary</option>
+                    <option value="text-bg-success">Success</option>
+                    <option value="text-bg-danger">Danger</option>
+                    <option value="text-bg-warning">Warning</option>
+                    <option value="text-bg-info">Info</option>
+                    <option value="text-bg-light">Light</option>
+                    <option value="text-bg-dark">Dark</option>
+                    <option value="text-bg-white">White</option>
+                </select>
+            </div>
+        </div>
+
+        <Section Name="CardTools" Heading="Card Tools" ResourceKey="CardTools">
+            <div class="container">
+                <div class="row mb-1 align-items-center">
+                    <Label Class="col-sm-3" For="cardCollapse" ResourceKey="CardCollapse" ResourceType="@resourceType" HelpText="Specify if the Collapse button should be displayed.">Collapse Botton?</Label>
+                    <div class="col-sm-9">
+                        <select id="cardCollapse" class="form-select" @bind="@_cardCollapse">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-1 align-items-center">
+                    <Label Class="col-sm-3" For="cardRemove" ResourceKey="CardRemove" ResourceType="@resourceType" HelpText="Specify if the Remove button should be displayed.">Remove Botton?</Label>
+                    <div class="col-sm-9">
+                        <select id="cardRemove" class="form-select" @bind="@_cardRemove">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-1 align-items-center">
+                    <Label Class="col-sm-3" For="cardMaximize" ResourceKey="CardMaximize" ResourceType="@resourceType" HelpText="Specify if the Maximize button should be displayed.">Maximize Botton?</Label>
+                    <div class="col-sm-9">
+                        <select id="cardMaximize" class="form-select" @bind="@_cardMaximize">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </Section>
+    }
+</div>
+
+@code {
+    private string resourceType = "codeXpert.Theme.AdminLTE.ContainerSettings, codeXpert.Theme.AdminLTE.Client.Oqtane"; // for localization
+    private string _title = "true";
+    private string _style = "default";
+    private string _background = string.Empty;
+    private string _text = string.Empty;
+    private string _border = string.Empty;
+    private string _rounded = string.Empty;
+    private string _shadow = string.Empty;
+    private string _animation = string.Empty;
+    private string _duration = string.Empty;
+    private string _delay = string.Empty;
+    private string _easing = string.Empty;
+    private string _cardColor = string.Empty;
+    private string _cardOutline = string.Empty;
+    private string _cardCollapse = "false";
+    private string _cardRemove = "false";
+    private string _cardMaximize = "false";
+
+    protected override void OnInitialized()
+    {
+        try
+        {
+            _title = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Title", "true");
+            _style = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Style", "default");
+            _animation = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Animate", "none");
+            _duration = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Duration", string.Empty);
+            _delay = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Delay", string.Empty);
+            _easing = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Easing", string.Empty);
+            _background = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Background", string.Empty);
+            _text = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Text", string.Empty);
+            _border = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Border", string.Empty);
+            _rounded = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Rounded", string.Empty);
+            _shadow = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Shadow", string.Empty);
+            _cardColor = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardColor", string.Empty);
+            _cardOutline = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardOutline", string.Empty);
+            _cardCollapse = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardCollapse", "false");
+            _cardRemove = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardRemove", "false");
+            _cardMaximize = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardMaximize", "false");
+        }
+        catch (Exception ex)
+        {
+            AddModuleMessage(ex.Message, MessageType.Error);
+        }
+    }
+
+    public async Task UpdateSettings()
+    {
+        try
+        {
+            var settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Title", _title);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Style", _style);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Animate", _animation);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Duration", _duration);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Delay", _delay);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Easing", _easing);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Background", _background);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Text", _text);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Border", _border);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Rounded", _rounded);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":Shadow", _shadow);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":CardColor", _cardColor);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":CardOutline", _cardOutline);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":CardCollapse", _cardCollapse);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":CardRemove", _cardRemove);
+            settings = SettingService.SetSetting(settings, GetType().Namespace + ":CardMaximize", _cardMaximize);
+            await SettingService.UpdateModuleSettingsAsync(settings, ModuleState.ModuleId);
+        }
+        catch (Exception ex)
+        {
+            AddModuleMessage(ex.Message, MessageType.Error);
+        }
+    }
+}

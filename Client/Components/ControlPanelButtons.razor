@@ -1,0 +1,203 @@
+﻿@namespace codeXpert.Theme.AdminLTE.Client.Components
+@using Oqtane.Themes.Controls
+
+@inherits ThemeControlBase
+@inject NavigationManager NavigationManager
+@inject IUserService UserService
+@inject IPageService PageService
+@inject ISettingService SettingService
+
+@if (ShowLanguageSwitcher)
+{
+    <LanguageSwitcherControl ButtonClass="@ButtonClass" DropdownAlignment="@LanguageDropdownAlignment" />
+}
+
+@if (ShowEditMode && (_showEditMode || (PageState.Page.IsPersonalizable && PageState.User != null && UserSecurity.IsAuthorized(PageState.User, RoleNames.Registered))))
+{
+	@if (PageState.EditMode)
+	{
+		<button type="button" class="btn @ButtonClass active" data-bs-toggle="button" aria-pressed="true" autocomplete="off" @onclick="(async () => await ToggleEditMode(PageState.EditMode))">
+			<i class="oi oi-pencil"></i>
+		</button>
+	}
+	else
+	{
+		<button type="button" class="btn @ButtonClass"  data-bs-toggle="button" aria-pressed="false" autocomplete="off" @onclick="(async () => await ToggleEditMode(PageState.EditMode))">
+			<i class="oi oi-pencil"></i>
+		</button>
+	}
+}
+
+@if (_canViewAdminDashboard || UserSecurity.IsAuthorized(PageState.User, PermissionNames.Edit, PageState.Page.PermissionList))
+{
+	<button type="button" class="btn @ButtonClass ms-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasControlPanel" aria-controls="offcanvasControlPanel">
+		<i class="oi oi-cog"></i>
+	</button>
+}
+
+@code {
+	[Parameter]
+	public string ButtonClass { get; set; }
+
+	[Parameter]
+    public bool ShowLanguageSwitcher { get; set; } = true;
+
+	[Parameter]
+	public string LanguageDropdownAlignment { get; set; } = string.Empty; // Empty or Left or Right
+
+	/// <summary>
+	/// Ability to hide the Edit Mode toggle button
+	/// </summary>
+	[Parameter]
+	public bool ShowEditMode { get; set; } = true;
+
+	private bool _canViewAdminDashboard = false;
+	private bool _showEditMode = false;             // internal state (not the same as ShowEditMode parameter)
+	private List<Page> _pages = new List<Page>();
+
+	protected string Pane
+	{
+		get => _pane;
+	}
+
+	private string settingCategory = "CP-category";
+	private string settingPane = "CP-pane";
+	private string _pane = string.Empty;
+
+	protected override async Task OnParametersSetAsync()
+	{
+		_canViewAdminDashboard = CanViewAdminDashboard();
+		_showEditMode = false;
+
+		if (UserSecurity.IsAuthorized(PageState.User, PermissionNames.Edit, PageState.Page.PermissionList))
+		{
+			_showEditMode = true;
+			_pages?.Clear();
+
+			foreach (Page p in PageState.Pages)
+			{
+				if (UserSecurity.IsAuthorized(PageState.User, PermissionNames.View, p.PermissionList))
+				{
+					_pages.Add(p);
+				}
+			}
+			await LoadSettingsAsync();
+		}
+		else
+		{
+			foreach (var module in PageState.Modules.Where(item => item.PageId == PageState.Page.PageId))
+			{
+				if (UserSecurity.IsAuthorized(PageState.User, PermissionNames.Edit, module.PermissionList))
+				{
+					_showEditMode = true;
+					break;
+				}
+			}
+		}
+	}
+
+	private bool CanViewAdminDashboard()
+	{
+		var admin = PageState.Pages.FirstOrDefault(item => item.Path == "admin");
+		if (admin != null)
+		{
+			foreach (var page in PageState.Pages.Where(item => item.ParentId == admin?.PageId))
+			{
+				if (UserSecurity.IsAuthorized(PageState.User, PermissionNames.View, page.PermissionList))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	private async Task ToggleEditMode(bool EditMode)
+	{
+		if (_showEditMode)
+		{
+			if (EditMode)
+			{
+				PageState.EditMode = false;
+			}
+			else
+			{
+				PageState.EditMode = true;
+			}
+
+			NavigationManager.NavigateTo(NavigateUrl(PageState.Page.Path, "edit=" + ((PageState.EditMode) ? "true" : "false")));
+		}
+		else
+		{
+			if (PageState.Page.IsPersonalizable && PageState.User != null)
+			{
+				await PageService.AddPageAsync(PageState.Page.PageId, PageState.User.UserId);
+				PageState.EditMode = true;
+				NavigationManager.NavigateTo(NavigateUrl(PageState.Page.Path, "edit=" + ((PageState.EditMode) ? "true" : "false")));
+			}
+		}
+	}
+
+	private void Navigate(string location)
+	{
+		Module module;
+		switch (location)
+		{
+			case "Admin":
+				// get admin dashboard moduleid
+				module = PageState.Modules.FirstOrDefault(item => item.ModuleDefinitionName == Constants.AdminDashboardModule);
+				if (module != null)
+				{
+					NavigationManager.NavigateTo(EditUrl(PageState.Page.Path, module.ModuleId, "Index", string.Empty));
+				}
+				break;
+			case "Add":
+			case "Edit":
+				string url = string.Empty;
+				// get page management moduleid
+				module = PageState.Modules.FirstOrDefault(item => item.ModuleDefinitionName == Constants.PageManagementModule);
+
+				if (module != null)
+				{
+					switch (location)
+					{
+						case "Add":
+							url = EditUrl(PageState.Page.Path, module.ModuleId, location, "cp=" + PageState.Page.PageId);
+							break;
+						case "Edit":
+							url = EditUrl(PageState.Page.Path, module.ModuleId, location, "id=" + PageState.Page.PageId.ToString() + "&cp=" + PageState.Page.PageId);
+							break;
+					}
+				}
+
+				if (url != string.Empty)
+				{
+					NavigationManager.NavigateTo(url);
+				}
+
+				break;
+		}
+	}
+
+	private async Task LoadSettingsAsync()
+	{
+		Dictionary<string, string> settings = await SettingService.GetUserSettingsAsync(PageState.User.UserId);
+		var pane = SettingService.GetSetting(settings, settingPane, string.Empty);
+		if (PageState.Page.Panes.Contains(pane))
+		{
+			_pane = pane;
+		}
+		else
+		{
+			if (PageState.Page.Panes.FindIndex(item => item.Equals(PaneNames.Default, StringComparison.OrdinalIgnoreCase)) != -1)
+			{
+				_pane = PaneNames.Default;
+			}
+			else
+			{
+				_pane = PaneNames.Admin;
+			}
+		}
+	}
+
+}

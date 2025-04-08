@@ -1,0 +1,224 @@
+@namespace codeXpert.Theme.AdminLTE
+@inherits ContainerBase
+@inject ISettingService SettingService
+@inject IJSRuntime JsRuntime
+@using codeXpert.Theme.AdminLTE.Client.Themes
+
+@if (_title)
+{
+    @if (_animate)
+    {
+        <section data-aos="@_animation" data-aos-duration="@_duration" data-aos-delay="@_delay" data-aos-easing="@_easing">
+            <div class="@_classes mb-3">
+                @if (ModuleState.Title != "-")
+                {
+                    if (_style == "card")
+                    {
+                        <div class="card-header">
+                            <h3 class="card-title"><ModuleTitle /></h3>
+                            <div class="card-tools">
+                                <div class="btn btn-tool"><ModuleActions /></div>
+                                @if(_cardCollapse)
+                                {
+                                    <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Collapse">
+                                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                                    </button>
+                                }
+                                @if (_cardRemove)
+                                {
+                                    <button type="button" class="btn btn-tool" data-lte-toggle="card-remove" title="Remove">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                }
+                                @if (_cardMaximize)
+                                {
+                                    <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize"> 
+                                        <i data-lte-icon="maximize" class="bi bi-fullscreen"></i>
+                                        <i data-lte-icon="minimize" class="bi bi-fullscreen-exit"></i> 
+                                    </button>
+                                }
+                            </div>
+                        </div>
+                        <div class="card-body"><ModuleInstance /></div>
+                    }
+                    else
+                    {
+                        <div class="row p-1">
+                            <div class="pt-2">
+                                <ModuleActions /><h3><ModuleTitle /></h3>
+                            </div>
+                        </div>
+                        @if (_border != "")
+                        {
+                            <hr class="@_border mx-n3 mt-0 px-0 border-opacity-25" />
+                        }
+                        <div class="row p-2">
+                            <div class="container-fluid">
+                                <ModuleInstance />
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="row p-2">
+                        <div class="container-fluid">
+                            <ModuleInstance />
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+    }
+    else
+    {
+        <div class="@_classes mb-3">
+            @if (ModuleState.Title != "-")
+            {
+                if (_style == "card")
+                {
+                    <div class="card-header">
+                        <h3 class="card-title"><ModuleTitle /></h3>
+                        <div class="card-tools">
+                            <div class="btn btn-tool"><ModuleActions /></div>
+                            @if (_cardCollapse)
+                            {
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Collapse">
+                                    <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                                    <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                                </button>
+                            }
+                            @if (_cardRemove)
+                            {
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-remove" title="Remove">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            }
+                            @if (_cardMaximize)
+                            {
+                                <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize"> 
+                                    <i data-lte-icon="maximize" class="bi bi-fullscreen"></i> 
+                                    <i data-lte-icon="minimize" class="bi bi-fullscreen-exit"></i> 
+                                </button>
+                            }
+                        </div>
+                    </div>
+                    <div class="card-body"><ModuleInstance /></div>
+                }
+                else
+                {
+                    <div class="row p-1">
+                        <div class="pt-2">
+                            <ModuleActions /><h3><ModuleTitle /></h3>
+                        </div>
+                    </div>
+                    @if(_border != "")
+                    {
+                        <hr class="@_border mx-n3 mt-0 px-0 border-opacity-25" />
+                    }
+                    <div class="row p-2">
+                        <div class="container-fluid pb-3">
+                            <ModuleInstance />
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                if (_style == "card")
+                {
+                    <div class="card-body"><ModuleInstance /></div>
+                }
+                else
+                {
+                    <div class="row p-2">
+                        <div class="container-fluid pb-3">
+                            <ModuleInstance />
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    }
+}
+else
+{
+    <div class="@_classes">
+        @if (_animate)
+        {
+            <section data-aos="@_animation" data-aos-duration="@_duration" data-aos-delay="@_delay" data-aos-easing="@_easing">
+                <ModuleActions />
+                <ModuleInstance />
+            </section>
+        }
+        else
+        {
+            <section>
+                <ModuleActions />
+                <ModuleInstance />
+            </section>
+        }
+    </div>
+}
+
+@code {
+    private bool _title = true;
+    private bool _animate = false;
+    private string _style = "default";
+    private string _animation = "none";
+    private string _classes = "container-fluid";
+    private string _border = string.Empty;
+    private string _duration = string.Empty;
+    private string _delay = string.Empty;
+    private string _easing = string.Empty;
+    private string _cardColor = string.Empty;
+    private string _cardOutline = string.Empty;
+    private bool _cardCollapse = false;
+    private bool _cardRemove = false;
+    private bool _cardMaximize = false;
+
+    protected override void OnParametersSet()
+    {
+        try
+        {
+            _title = bool.Parse(SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Title", "true"));
+            _style = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Style", "default");
+            _animation = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Animate", "none");
+            _border = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Border", string.Empty);
+            _cardColor = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardColor", string.Empty);
+            _duration = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Duration", string.Empty);
+            _delay = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Delay", string.Empty);
+            _easing = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Easing", string.Empty);
+            _cardOutline = SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardOutline", string.Empty);
+            _cardCollapse = bool.Parse(SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardCollapse", "false"));
+            _cardRemove = bool.Parse(SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardRemove", "false"));
+            _cardMaximize = bool.Parse(SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":CardMaximize", "false"));
+
+            if(_style.ToLower() == "card")
+            {
+                _classes = "card";
+                _classes += " " + _cardOutline;
+                _classes += " " + _cardColor;
+            }
+            else
+            {
+                _classes = _style == "hero" ? "container-fluid px-0 overflow-hidden" : "container-fluid overflow-hidden";
+                _classes += " " + _border + " border-opacity-25";
+                _classes += " " + SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Background", string.Empty);
+                _classes += " " + SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Text", string.Empty);
+            }
+            _classes += " " + SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Rounded", string.Empty);
+            _classes += " " + SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Shadow", string.Empty);
+            _classes = _classes.Trim();
+            
+            _animate = _animation.ToLower() == "none" ? _animate = false : _animate = true;
+            
+        }
+        catch
+        {
+            // error loading container settings
+        }
+    }
+
+}

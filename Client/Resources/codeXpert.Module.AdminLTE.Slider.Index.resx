@@ -1,0 +1,1001 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Tables.Content" xml:space="preserve">
+    <value>&lt;!-- Tables Section --&gt;
+&lt;section id="tables" class="tables section"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row gy-4"&gt;
+             &lt;div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100"&gt;
+                  &lt;div class="card mb-4"&gt;
+                       &lt;div class="card-header"&gt;
+                            &lt;h3 class="card-title"&gt;Bordered Table&lt;/h3&gt;
+                       &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                       &lt;div class="card-body"&gt;
+                            &lt;table class="table table-bordered"&gt;
+                                &lt;thead&gt;
+                                    &lt;tr&gt;
+                                           &lt;th style="width: 10px"&gt;#&lt;/th&gt;
+                                           &lt;th&gt;Task&lt;/th&gt;
+                                           &lt;th&gt;Progress&lt;/th&gt;
+                                           &lt;th style="width: 40px"&gt;Label&lt;/th&gt;
+                                     &lt;/tr&gt;
+                                &lt;/thead&gt;
+                                &lt;tbody&gt;
+                                   &lt;tr class="align-middle"&gt;
+                                           &lt;td&gt;1.&lt;/td&gt;
+                                           &lt;td&gt;Update software&lt;/td&gt;
+                                           &lt;td&gt;
+                                                 &lt;div class="progress progress-xs"&gt;
+                                                        &lt;div class="progress-bar progress-bar-danger" style="width: 55%"&gt;&lt;/div&gt;
+                                                 &lt;/div&gt;
+                                           &lt;/td&gt;
+                                           &lt;td&gt;&lt;span class="badge text-bg-danger"&gt;55%&lt;/span&gt;&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr class="align-middle"&gt;
+                                          &lt;td&gt;2.&lt;/td&gt;
+                                          &lt;td&gt;Clean database&lt;/td&gt;
+                                          &lt;td&gt;
+                                                &lt;div class="progress progress-xs"&gt;
+                                                        &lt;div class="progress-bar text-bg-warning" style="width: 70%"&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                          &lt;/td&gt;
+                                          &lt;td&gt; &lt;span class="badge text-bg-warning"&gt;70%&lt;/span&gt; &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr class="align-middle"&gt;
+                                           &lt;td&gt;3.&lt;/td&gt;
+                                           &lt;td&gt;Cron job running&lt;/td&gt;
+                                           &lt;td&gt;
+                                                &lt;div class="progress progress-xs progress-striped active"&gt;
+                                                        &lt;div class="progress-bar text-bg-primary" style="width: 30%"&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                          &lt;/td&gt;
+                                          &lt;td&gt; &lt;span class="badge text-bg-primary"&gt;30%&lt;/span&gt; &lt;/td&gt;
+                                   &lt;/tr&gt;
+                                   &lt;tr class="align-middle"&gt;
+                                          &lt;td&gt;4.&lt;/td&gt;
+                                          &lt;td&gt;Fix and squish bugs&lt;/td&gt;
+                                          &lt;td&gt;
+                                                &lt;div class="progress progress-xs progress-striped active"&gt;
+                                                        &lt;div class="progress-bar text-bg-success" style="width: 90%"&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                         &lt;/td&gt;
+                                         &lt;td&gt; &lt;span class="badge text-bg-success"&gt;90%&lt;/span&gt; &lt;/td&gt;
+                                 &lt;/tr&gt;
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt; &lt;!-- /.card-body --&gt;
+                    &lt;div class="card-footer bg-transparent clearfix"&gt;
+      &lt;ul class="pagination pagination-sm m-0 float-end"&gt;
+        &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;«&lt;/a&gt; &lt;/li&gt;
+        &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;1&lt;/a&gt; &lt;/li&gt;
+        &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;2&lt;/a&gt; &lt;/li&gt;
+        &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;3&lt;/a&gt; &lt;/li&gt;
+        &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;»&lt;/a&gt; &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-lg-6" data-aos="fade-up" data-aos-delay="200"&gt;
+    &lt;div class="card mb-4"&gt;
+     &lt;div class="card-header"&gt;
+      &lt;h3 class="card-title"&gt;Simple Full Width Table&lt;/h3&gt;
+      &lt;div class="card-tools"&gt;
+       &lt;ul class="pagination pagination-sm float-end"&gt;
+                               &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;«&lt;/a&gt; &lt;/li&gt;
+                               &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;1&lt;/a&gt; &lt;/li&gt;
+                               &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;2&lt;/a&gt; &lt;/li&gt;
+                               &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;3&lt;/a&gt; &lt;/li&gt;
+                               &lt;li class="page-item"&gt; &lt;a class="page-link" href="#"&gt;»&lt;/a&gt; &lt;/li&gt;
+       &lt;/ul&gt;
+      &lt;/div&gt;
+     &lt;/div&gt; &lt;!-- /.card-header --&gt;
+     &lt;div class="card-body p-0"&gt;
+      &lt;table class="table"&gt;
+                            &lt;thead&gt;
+           &lt;tr&gt;
+          &lt;th style="width: 10px"&gt;#&lt;/th&gt;
+          &lt;th&gt;Task&lt;/th&gt;
+          &lt;th&gt;Progress&lt;/th&gt;
+          &lt;th style="width: 40px"&gt;Label&lt;/th&gt;
+           &lt;/tr&gt;
+                            &lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr class="align-middle"&gt;
+         &lt;td&gt;1.&lt;/td&gt;
+         &lt;td&gt;Update software&lt;/td&gt;
+         &lt;td&gt;
+           &lt;div class="progress progress-xs"&gt;
+             &lt;div class="progress-bar progress-bar-danger" style="width: 55%"&gt;&lt;/div&gt;
+           &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt;&lt;span class="badge text-bg-danger"&gt;55%&lt;/span&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+                                &lt;tr class="align-middle"&gt;
+         &lt;td&gt;2.&lt;/td&gt;
+         &lt;td&gt;Clean database&lt;/td&gt;
+         &lt;td&gt;
+           &lt;div class="progress progress-xs"&gt;
+             &lt;div class="progress-bar text-bg-warning" style="width: 70%"&gt;&lt;/div&gt;
+           &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt; &lt;span class="badge text-bg-warning"&gt;70%&lt;/span&gt; &lt;/td&gt;
+           &lt;/tr&gt;
+                                   &lt;tr class="align-middle"&gt;
+          &lt;td&gt;3.&lt;/td&gt;
+          &lt;td&gt;Cron job running&lt;/td&gt;
+          &lt;td&gt;
+           &lt;div class="progress progress-xs progress-striped active"&gt;
+             &lt;div class="progress-bar text-bg-primary" style="width: 30%"&gt;&lt;/div&gt;
+           &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt; &lt;span class="badge text-bg-primary"&gt;30%&lt;/span&gt; &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr class="align-middle"&gt;
+          &lt;td&gt;4.&lt;/td&gt;
+          &lt;td&gt;Fix and squish bugs&lt;/td&gt;
+          &lt;td&gt;
+            &lt;div class="progress progress-xs progress-striped active"&gt;
+             &lt;div class="progress-bar text-bg-success" style="width: 90%"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+          &lt;td&gt; &lt;span class="badge text-bg-success"&gt;90%&lt;/span&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+                           &lt;/tbody&gt;
+      &lt;/table&gt;
+     &lt;/div&gt; &lt;!-- /.card-body --&gt;
+    &lt;/div&gt;
+   &lt;/div&gt;
+        &lt;/div&gt;
+ &lt;/div&gt;
+
+
+ &lt;div class="container"&gt;
+        &lt;div class="row gy-4"&gt;
+   &lt;div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100"&gt;
+    &lt;div class="card mb-4"&gt;
+     &lt;div class="card-header"&gt;
+      &lt;h3 class="card-title"&gt;Condensed Full Width Table&lt;/h3&gt;
+     &lt;/div&gt; &lt;!-- /.card-header --&gt;
+     &lt;div class="card-body p-0"&gt;
+      &lt;table class="table table-sm"&gt;
+                            &lt;thead&gt;
+         &lt;tr&gt;
+           &lt;th style="width: 10px"&gt;#&lt;/th&gt;
+           &lt;th&gt;Task&lt;/th&gt;
+          &lt;th&gt;Progress&lt;/th&gt;
+          &lt;th style="width: 40px"&gt;Label&lt;/th&gt;
+         &lt;/tr&gt;
+       &lt;/thead&gt;
+       &lt;tbody&gt;
+        &lt;tr class="align-middle"&gt;
+         &lt;td&gt;1.&lt;/td&gt;
+         &lt;td&gt;Update software&lt;/td&gt;
+         &lt;td&gt;
+          &lt;div class="progress progress-xs"&gt;
+           &lt;div class="progress-bar progress-bar-danger" style="width: 55%"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt;&lt;span class="badge text-bg-danger"&gt;55%&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="align-middle"&gt;
+         &lt;td&gt;2.&lt;/td&gt;
+         &lt;td&gt;Clean database&lt;/td&gt;
+         &lt;td&gt;
+          &lt;div class="progress progress-xs"&gt;
+           &lt;div class="progress-bar text-bg-warning" style="width: 70%"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt; &lt;span class="badge text-bg-warning"&gt;70%&lt;/span&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="align-middle"&gt;
+         &lt;td&gt;3.&lt;/td&gt;
+         &lt;td&gt;Cron job running&lt;/td&gt;
+         &lt;td&gt;
+          &lt;div class="progress progress-xs progress-striped active"&gt;
+           &lt;div class="progress-bar text-bg-primary" style="width: 30%"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt; &lt;span class="badge text-bg-primary"&gt;30%&lt;/span&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="align-middle"&gt;
+         &lt;td&gt;4.&lt;/td&gt;
+         &lt;td&gt;Fix and squish bugs&lt;/td&gt;
+         &lt;td&gt;
+          &lt;div class="progress progress-xs progress-striped active"&gt;
+              &lt;div class="progress-bar text-bg-success" style="width: 90%"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;/td&gt;
+          &lt;td&gt; &lt;span class="badge text-bg-success"&gt;90%&lt;/span&gt; &lt;/td&gt;
+           &lt;/tr&gt;
+                            &lt;/tbody&gt;
+      &lt;/table&gt;
+     &lt;/div&gt; &lt;!-- /.card-body --&gt;
+    &lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;div class="col-lg-6" data-aos="fade-up" data-aos-delay="200"&gt;
+    &lt;div class="card mb-4"&gt;
+     &lt;div class="card-header"&gt;
+      &lt;h3 class="card-title"&gt;Striped Full Width Table&lt;/h3&gt;
+     &lt;/div&gt; &lt;!-- /.card-header --&gt;
+     &lt;div class="card-body p-0"&gt;
+      &lt;table class="table table-striped"&gt;
+       &lt;thead&gt;
+        &lt;tr&gt;
+         &lt;th style="width: 10px"&gt;#&lt;/th&gt;
+         &lt;th&gt;Task&lt;/th&gt;
+         &lt;th&gt;Progress&lt;/th&gt;
+         &lt;th style="width: 40px"&gt;Label&lt;/th&gt;
+        &lt;/tr&gt;
+       &lt;/thead&gt;
+       &lt;tbody&gt;
+        &lt;tr class="align-middle"&gt;
+         &lt;td&gt;1.&lt;/td&gt;
+         &lt;td&gt;Update software&lt;/td&gt;
+         &lt;td&gt;
+          &lt;div class="progress progress-xs"&gt;
+           &lt;div class="progress-bar progress-bar-danger" style="width: 55%"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt;&lt;span class="badge text-bg-danger"&gt;55%&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="align-middle"&gt;
+         &lt;td&gt;2.&lt;/td&gt;
+         &lt;td&gt;Clean database&lt;/td&gt;
+         &lt;td&gt;
+          &lt;div class="progress progress-xs"&gt;
+           &lt;div class="progress-bar text-bg-warning" style="width: 70%"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt; &lt;span class="badge text-bg-warning"&gt;70%&lt;/span&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="align-middle"&gt;
+         &lt;td&gt;3.&lt;/td&gt;
+         &lt;td&gt;Cron job running&lt;/td&gt;
+         &lt;td&gt;
+          &lt;div class="progress progress-xs progress-striped active"&gt;
+           &lt;div class="progress-bar text-bg-primary" style="width: 30%"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt; &lt;span class="badge text-bg-primary"&gt;30%&lt;/span&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class="align-middle"&gt;
+         &lt;td&gt;4.&lt;/td&gt;
+         &lt;td&gt;Fix and squish bugs&lt;/td&gt;
+         &lt;td&gt;
+          &lt;div class="progress progress-xs progress-striped active"&gt;
+           &lt;div class="progress-bar text-bg-success" style="width: 90%"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+         &lt;/td&gt;
+         &lt;td&gt; &lt;span class="badge text-bg-success"&gt;90%&lt;/span&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+       &lt;/tbody&gt;
+      &lt;/table&gt;
+     &lt;/div&gt; &lt;!-- /.card-body --&gt;
+    &lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;   
+&lt;/section&gt;
+&lt;!-- End About Section --&gt;</value>
+  </data>
+  <data name="Tables.Title" xml:space="preserve">
+    <value>Tables</value>
+  </data>
+  <data name="Slider.Content" xml:space="preserve">
+    <value>    &lt;!-- Clients Section --&gt;
+    &lt;section id="clients" class="clients section light-background"&gt;
+      &lt;div class="container" data-aos="zoom-in"&gt;
+        &lt;div class="swiper init-swiper"&gt;
+          &lt;script type="application/json" class="swiper-config"&gt;
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 5,
+                  "spaceBetween": 120
+                },
+                "1200": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          &lt;/script&gt;
+          &lt;div class="swiper-wrapper align-items-center"&gt;
+            &lt;div class="swiper-slide"&gt;&lt;img src="[wwwroot]Themes/Oqtane.Theme.Corporate/assets/img/clients/client-1.png" class="img-fluid" alt=""&gt;&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;&lt;img src="[wwwroot]Themes/Oqtane.Theme.Corporate/assets/img/clients/client-2.png" class="img-fluid" alt=""&gt;&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;&lt;img src="[wwwroot]Themes/Oqtane.Theme.Corporate/assets/img/clients/client-3.png" class="img-fluid" alt=""&gt;&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;&lt;img src="[wwwroot]Themes/Oqtane.Theme.Corporate/assets/img/clients/client-4.png" class="img-fluid" alt=""&gt;&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;&lt;img src="[wwwroot]Themes/Oqtane.Theme.Corporate/assets/img/clients/client-5.png" class="img-fluid" alt=""&gt;&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;&lt;img src="[wwwroot]Themes/Oqtane.Theme.Corporate/assets/img/clients/client-6.png" class="img-fluid" alt=""&gt;&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;&lt;img src="[wwwroot]Themes/Oqtane.Theme.Corporate/assets/img/clients/client-7.png" class="img-fluid" alt=""&gt;&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;&lt;img src="[wwwroot]Themes/Oqtane.Theme.Corporate/assets/img/clients/client-8.png" class="img-fluid" alt=""&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- End Clients Section --&gt;</value>
+  </data>
+  <data name="FAQs.Content" xml:space="preserve">
+    <value>&lt;!-- FAQ Section --&gt;
+&lt;section id="faq-2" class="faq-2 section light-background"&gt;
+ &lt;div class="section-title" data-aos="fade-up"&gt;
+  &lt;h2&gt;Frequently Asked Questions&lt;/h2&gt;
+  &lt;p&gt;Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div class="container accordion" id="accordionExample"&gt;
+  &lt;div class="accordion-item"&gt;
+   &lt;h2 class="accordion-header"&gt; &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"&gt;
+     Non consectetur a erat nam at lectus urna duis?
+    &lt;/button&gt; &lt;/h2&gt;
+   &lt;div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"&gt;
+    &lt;div class="accordion-body"&gt; &lt;strong&gt;This is the first item's accordion body.&lt;/strong&gt; It is shown by default, until the collapse plugin
+     adds the appropriate classes that we use to style
+     each element. These classes control the overall
+     appearance, as well as the showing and hiding via
+     CSS transitions. You can modify any of this with
+     custom CSS or overriding our default variables. It's
+     also worth noting that just about any HTML can go
+     within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the
+     transition does limit overflow.
+    &lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+   &lt;h2 class="accordion-header"&gt; &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"&gt;
+     Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?&lt;/
+    &lt;/button&gt; &lt;/h2&gt;
+   &lt;div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample"&gt;
+    &lt;div class="accordion-body"&gt; &lt;strong&gt;This is the second item's accordion body.&lt;/strong&gt; Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+    &lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+   &lt;h2 class="accordion-header"&gt; &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"&gt;
+     Dolor sit amet consectetur adipiscing elit pellentesque?
+    &lt;/button&gt; &lt;/h2&gt;
+   &lt;div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample"&gt;
+    &lt;div class="accordion-body"&gt; &lt;strong&gt;This is the third item's accordion body.&lt;/strong&gt; Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+    &lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+   &lt;h2 class="accordion-header"&gt; &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"&gt;
+     Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
+    &lt;/button&gt; &lt;/h2&gt;
+   &lt;div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample"&gt;
+    &lt;div class="accordion-body"&gt; &lt;strong&gt;This is the fourth item's accordion body.&lt;/strong&gt; Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+    &lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/section&gt;
+&lt;!-- FAQ Section --&gt;</value>
+  </data>
+  <data name="Services.Content" xml:space="preserve">
+    <value>&lt;!-- Service 2 - Bootstrap Brain Component --&gt;
+&lt;section class="py-5 py-xl-8"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row justify-content-md-center"&gt;
+      &lt;div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6"&gt;
+        &lt;h2 class="mb-4 display-5 text-center"&gt;Services&lt;/h2&gt;
+        &lt;p class="text-secondary mb-5 text-center"&gt;We offer a wide range of services to help tech companies of all sizes succeed. We specialize in market research, secure payments, and 24/7 support.&lt;/p&gt;
+        &lt;hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="container overflow-hidden"&gt;
+    &lt;div class="row gy-5 gx-md-5 justify-content-center"&gt;
+      &lt;div class="col-10 col-md-5 col-xl-4 overflow-hidden"&gt;
+        &lt;div class="row gy-4"&gt;
+          &lt;div class="col-12 col-lg-2"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-command text-primary" viewBox="0 0 16 16"&gt;
+              &lt;path d="M3.5 2A1.5 1.5 0 0 1 5 3.5V5H3.5a1.5 1.5 0 1 1 0-3zM6 5V3.5A2.5 2.5 0 1 0 3.5 6H5v4H3.5A2.5 2.5 0 1 0 6 12.5V11h4v1.5a2.5 2.5 0 1 0 2.5-2.5H11V6h1.5A2.5 2.5 0 1 0 10 3.5V5H6zm4 1v4H6V6h4zm1-1V3.5A1.5 1.5 0 1 1 12.5 5H11zm0 6h1.5a1.5 1.5 0 1 1-1.5 1.5V11zm-6 0v1.5A1.5 1.5 0 1 1 3.5 11H5z" /&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;div class="col-12 col-lg-10"&gt;
+            &lt;h4 class="mb-3"&gt;Market Research&lt;/h4&gt;
+            &lt;p class="mb-3 text-secondary"&gt;We can help you to understand your target market and identify new opportunities for growth. We offer a variety of market research services including surveys.&lt;/p&gt;
+            &lt;div&gt;
+              &lt;a href="#!" class="fw-bold text-decoration-none link-primary"&gt;
+                Learn More
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"&gt;
+                  &lt;path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" /&gt;
+                &lt;/svg&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="col-10 col-md-5 col-xl-4 overflow-hidden"&gt;
+        &lt;div class="row gy-4"&gt;
+          &lt;div class="col-12 col-lg-2"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-laptop text-primary" viewBox="0 0 16 16"&gt;
+              &lt;path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z" /&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;div class="col-12 col-lg-10"&gt;
+            &lt;h4 class="mb-3"&gt;Web Design&lt;/h4&gt;
+            &lt;p class="mb-3 text-secondary"&gt;We can help you to create a visually appealing website. We take into account your brand identity and target audience when designing your website.&lt;/p&gt;
+            &lt;div&gt;
+              &lt;a href="#!" class="fw-bold text-decoration-none link-primary"&gt;
+                Learn More
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"&gt;
+                  &lt;path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" /&gt;
+                &lt;/svg&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="col-10 col-md-5 col-xl-4 overflow-hidden"&gt;
+        &lt;div class="row gy-4"&gt;
+          &lt;div class="col-12 col-lg-2"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-credit-card-2-front text-primary" viewBox="0 0 16 16"&gt;
+              &lt;path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" /&gt;
+              &lt;path d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" /&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;div class="col-12 col-lg-10"&gt;
+            &lt;h4 class="mb-3"&gt;Secure Payments&lt;/h4&gt;
+            &lt;p class="mb-3 text-secondary"&gt;We offer a variety of secure payment solutions to help you accept payments. We also offer fraud protection to help protect your business from fraud.&lt;/p&gt;
+            &lt;div&gt;
+              &lt;a href="#!" class="fw-bold text-decoration-none link-primary"&gt;
+                Learn More
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"&gt;
+                  &lt;path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" /&gt;
+                &lt;/svg&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="col-10 col-md-5 col-xl-4 overflow-hidden"&gt;
+        &lt;div class="row gy-4"&gt;
+          &lt;div class="col-12 col-lg-2"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-cup-hot text-primary" viewBox="0 0 16 16"&gt;
+              &lt;path fill-rule="evenodd" d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6H.5ZM13 12.5a2.01 2.01 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5ZM2.64 13.825 1.123 7h11.754l-1.517 6.825A1.5 1.5 0 0 1 9.896 15H4.104a1.5 1.5 0 0 1-1.464-1.175Z" /&gt;
+              &lt;path d="m4.4.8-.003.004-.014.019a4.167 4.167 0 0 0-.204.31 2.327 2.327 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.31 3.31 0 0 1-.202.388 5.444 5.444 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 3.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8Zm3 0-.003.004-.014.019a4.167 4.167 0 0 0-.204.31 2.327 2.327 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.31 3.31 0 0 1-.202.388 5.444 5.444 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 6.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8Zm3 0-.003.004-.014.019a4.077 4.077 0 0 0-.204.31 2.337 2.337 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.593.593 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3.198 3.198 0 0 1-.202.388 5.385 5.385 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4.149 4.149 0 0 0 .204-.31 2.06 2.06 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.593.593 0 0 0-.09-.252A4.334 4.334 0 0 0 9.6 2.8l-.01-.012a5.099 5.099 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a5.446 5.446 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8Z" /&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;div class="col-12 col-lg-10"&gt;
+            &lt;h4 class="mb-3"&gt;Daily Updates&lt;/h4&gt;
+            &lt;p class="mb-3 text-secondary"&gt;We provide our clients with daily updates on their business performance. This includes data on website traffic, sales, blog posts, and other key metrics.&lt;/p&gt;
+            &lt;div&gt;
+              &lt;a href="#!" class="fw-bold text-decoration-none link-primary"&gt;
+                Learn More
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"&gt;
+                  &lt;path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" /&gt;
+                &lt;/svg&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="col-10 col-md-5 col-xl-4 overflow-hidden"&gt;
+        &lt;div class="row gy-4"&gt;
+          &lt;div class="col-12 col-lg-2"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-gear text-primary" viewBox="0 0 16 16"&gt;
+              &lt;path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" /&gt;
+              &lt;path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" /&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;div class="col-12 col-lg-10"&gt;
+            &lt;h4 class="mb-3"&gt;Digital Marketing&lt;/h4&gt;
+            &lt;p class="mb-3 text-secondary"&gt;We can help you to promote your business online through a variety of digital marketing channels, including search engine optimization (SEO).&lt;/p&gt;
+            &lt;div&gt;
+              &lt;a href="#!" class="fw-bold text-decoration-none link-primary"&gt;
+                Learn More
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"&gt;
+                  &lt;path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" /&gt;
+                &lt;/svg&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="col-10 col-md-5 col-xl-4 overflow-hidden"&gt;
+        &lt;div class="row gy-4"&gt;
+          &lt;div class="col-12 col-lg-2"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-telephone-inbound text-primary" viewBox="0 0 16 16"&gt;
+              &lt;path d="M15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0zm-12.2 1.182a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" /&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;div class="col-12 col-lg-10"&gt;
+            &lt;h4 class="mb-3"&gt;24/7 Support&lt;/h4&gt;
+            &lt;p class="mb-3 text-secondary"&gt;We offer 24/7 support to our clients. This means that you can always get help when you need it, no matter what time of day or night it is.&lt;/p&gt;
+            &lt;div&gt;
+              &lt;a href="#!" class="fw-bold text-decoration-none link-primary"&gt;
+                Learn More
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"&gt;
+                  &lt;path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" /&gt;
+                &lt;/svg&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</value>
+  </data>
+  <data name="Services.Title" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Slider.Title" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="FAQs.Title" xml:space="preserve">
+    <value>FAQs</value>
+  </data>
+  <data name="Cards.Title" xml:space="preserve">
+    <value>Cards</value>
+  </data>
+  <data name="Cards.Content" xml:space="preserve">
+    <value>&lt;div class="row g-4 mb-4"&gt;
+         &lt;div class="col-md-3"&gt;
+                  &lt;div class="card card-primary collapsed-card"&gt;
+                          &lt;div class="card-header"&gt;
+                                   &lt;h3 class="card-title"&gt;Expandable&lt;/h3&gt;
+                                   &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"&gt; &lt;i data-lte-icon="expand" class="bi bi-plus-lg"&gt;&lt;/i&gt; &lt;i data-lte-icon="collapse" class="bi bi-dash-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                           &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                           &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                  &lt;/div&gt; &lt;!-- /.card --&gt;
+          &lt;/div&gt; &lt;!-- /.col --&gt;
+          &lt;div class="col-md-3"&gt;
+                  &lt;div class="card card-success"&gt;
+                          &lt;div class="card-header"&gt;
+                                  &lt;h3 class="card-title"&gt;Collapsable&lt;/h3&gt;
+                                  &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"&gt; &lt;i data-lte-icon="expand" class="bi bi-plus-lg"&gt;&lt;/i&gt; &lt;i data-lte-icon="collapse" class="bi bi-dash-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                          &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                          &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                  &lt;/div&gt; &lt;!-- /.card --&gt;
+          &lt;/div&gt; &lt;!-- /.col --&gt;
+          &lt;div class="col-md-3"&gt;
+                  &lt;div class="card card-warning"&gt;
+                          &lt;div class="card-header"&gt;
+                                 &lt;h3 class="card-title"&gt;Removable&lt;/h3&gt;
+                                 &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-remove"&gt; &lt;i class="bi bi-x-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                          &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                          &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                  &lt;/div&gt; &lt;!-- /.card --&gt;
+          &lt;/div&gt; &lt;!-- /.col --&gt;
+          &lt;div class="col-md-3"&gt;
+                   &lt;div class="card card-danger"&gt;
+                           &lt;div class="card-header"&gt;
+                                   &lt;h3 class="card-title"&gt;Maximizable&lt;/h3&gt;
+                                   &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-maximize"&gt; &lt;i data-lte-icon="maximize" class="bi bi-fullscreen"&gt;&lt;/i&gt; &lt;i data-lte-icon="minimize" class="bi bi-fullscreen-exit"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                           &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                           &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                  &lt;/div&gt; &lt;!-- /.card --&gt;
+          &lt;/div&gt; &lt;!-- /.col --&gt;
+ &lt;/div&gt; &lt;!--end::Row--&gt;
+ &lt;h5 class="mb-2"&gt;Card Outlined&lt;/h5&gt; &lt;!--begin::Row--&gt;
+         &lt;div class="row g-4 mb-4"&gt;
+                  &lt;div class="col-md-3"&gt;
+                          &lt;div class="card card-outline card-primary collapsed-card"&gt;
+                                  &lt;div class="card-header"&gt;
+                                          &lt;h3 class="card-title"&gt;Expandable&lt;/h3&gt;
+                                          &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"&gt; &lt;i data-lte-icon="expand" class="bi bi-plus-lg"&gt;&lt;/i&gt; &lt;i data-lte-icon="collapse" class="bi bi-dash-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                                  &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                                  &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                            &lt;/div&gt; &lt;!-- /.card --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3"&gt;
+                            &lt;div class="card card-outline card-success"&gt;
+                                &lt;div class="card-header"&gt;
+                                    &lt;h3 class="card-title"&gt;Collapsable&lt;/h3&gt;
+                                    &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"&gt; &lt;i data-lte-icon="expand" class="bi bi-plus-lg"&gt;&lt;/i&gt; &lt;i data-lte-icon="collapse" class="bi bi-dash-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                                &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                                &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                            &lt;/div&gt; &lt;!-- /.card --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3"&gt;
+                            &lt;div class="card card-outline card-warning"&gt;
+                                &lt;div class="card-header"&gt;
+                                    &lt;h3 class="card-title"&gt;Removable&lt;/h3&gt;
+                                    &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-remove"&gt; &lt;i class="bi bi-x-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                                &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                                &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                            &lt;/div&gt; &lt;!-- /.card --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3"&gt;
+                            &lt;div class="card card-outline card-danger"&gt;
+                                &lt;div class="card-header"&gt;
+                                    &lt;h3 class="card-title"&gt;Maximizable&lt;/h3&gt;
+                                    &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-maximize"&gt; &lt;i data-lte-icon="maximize" class="bi bi-fullscreen"&gt;&lt;/i&gt; &lt;i data-lte-icon="minimize" class="bi bi-fullscreen-exit"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                                &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                                &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                            &lt;/div&gt; &lt;!-- /.card --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                    &lt;/div&gt; &lt;!--end::Row--&gt;
+                    &lt;h5 class="mb-2"&gt;Card with &lt;code&gt;.text-bg-*&lt;/code&gt;&lt;/h5&gt; &lt;!--begin::Row--&gt;
+                    &lt;div class="row g-4 mb-4"&gt;
+                        &lt;div class="col-md-3"&gt;
+                            &lt;div class="card text-bg-primary collapsed-card"&gt;
+                                &lt;div class="card-header"&gt;
+                                    &lt;h3 class="card-title"&gt;Expandable&lt;/h3&gt;
+                                    &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"&gt; &lt;i data-lte-icon="expand" class="bi bi-plus-lg"&gt;&lt;/i&gt; &lt;i data-lte-icon="collapse" class="bi bi-dash-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                                &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                                &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                            &lt;/div&gt; &lt;!-- /.card --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3"&gt;
+                            &lt;div class="card text-bg-success"&gt;
+                                &lt;div class="card-header"&gt;
+                                    &lt;h3 class="card-title"&gt;Collapsable&lt;/h3&gt;
+                                    &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"&gt; &lt;i data-lte-icon="expand" class="bi bi-plus-lg"&gt;&lt;/i&gt; &lt;i data-lte-icon="collapse" class="bi bi-dash-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                                &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                                &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                            &lt;/div&gt; &lt;!-- /.card --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3"&gt;
+                            &lt;div class="card text-bg-warning"&gt;
+                                &lt;div class="card-header"&gt;
+                                    &lt;h3 class="card-title"&gt;Removable&lt;/h3&gt;
+                                    &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-remove"&gt; &lt;i class="bi bi-x-lg"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                                &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                                &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                            &lt;/div&gt; &lt;!-- /.card --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3"&gt;
+                            &lt;div class="card text-bg-danger"&gt;
+                                &lt;div class="card-header"&gt;
+                                    &lt;h3 class="card-title"&gt;Maximizable&lt;/h3&gt;
+                                    &lt;div class="card-tools"&gt; &lt;button type="button" class="btn btn-tool" data-lte-toggle="card-maximize"&gt; &lt;i data-lte-icon="maximize" class="bi bi-fullscreen"&gt;&lt;/i&gt; &lt;i data-lte-icon="minimize" class="bi bi-fullscreen-exit"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt; &lt;!-- /.card-tools --&gt;
+                                &lt;/div&gt; &lt;!-- /.card-header --&gt;
+                                &lt;div class="card-body"&gt;The body of the card&lt;/div&gt; &lt;!-- /.card-body --&gt;
+                            &lt;/div&gt; &lt;!-- /.card --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                    &lt;/div&gt; &lt;!--end::Row--&gt;</value>
+  </data>
+  <data name="InfoBox.Title" xml:space="preserve">
+    <value>&lt;div class="container-fluid"&gt;
+                    &lt;h5 class="mb-2"&gt;Info Box&lt;/h5&gt; &lt;!--begin::Row--&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-12 col-sm-6 col-md-3"&gt;
+                            &lt;div class="info-box"&gt; &lt;span class="info-box-icon text-bg-primary shadow-sm"&gt; &lt;i class="bi bi-gear-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;CPU Traffic&lt;/span&gt; &lt;span class="info-box-number"&gt;
+                                        10
+                                        &lt;small&gt;%&lt;/small&gt; &lt;/span&gt; &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-12 col-sm-6 col-md-3"&gt;
+                            &lt;div class="info-box"&gt; &lt;span class="info-box-icon text-bg-success shadow-sm"&gt; &lt;i class="bi bi-cart-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Sales&lt;/span&gt; &lt;span class="info-box-number"&gt;760&lt;/span&gt; &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt; &lt;!-- fix for small devices only --&gt; &lt;!-- &lt;div class="clearfix hidden-md-up"&gt;&lt;/div&gt; --&gt;
+                        &lt;div class="col-12 col-sm-6 col-md-3"&gt;
+                            &lt;div class="info-box"&gt; &lt;span class="info-box-icon text-bg-warning shadow-sm"&gt; &lt;i class="bi bi-people-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;New Members&lt;/span&gt; &lt;span class="info-box-number"&gt;2,000&lt;/span&gt; &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-12 col-sm-6 col-md-3"&gt;
+                            &lt;div class="info-box"&gt; &lt;span class="info-box-icon text-bg-danger shadow-sm"&gt; &lt;i class="bi bi-hand-thumbs-up-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Likes&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt; &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                    &lt;/div&gt; &lt;!--end::Row--&gt; &lt;!-- =========================================================== --&gt;
+                    &lt;h5 class="mb-2"&gt;
+                        Info Box With Custom Shadows &lt;small&gt; &lt;i&gt;Using Bootstrap's Shadow Utility&lt;/i&gt; &lt;/small&gt; &lt;/h5&gt; &lt;!--begin::Row--&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-12 col-sm-6 col-md-3"&gt;
+                            &lt;div class="info-box shadow-none"&gt; &lt;span class="info-box-icon text-bg-primary shadow-sm"&gt; &lt;i class="bi bi-gear-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;CPU Traffic&lt;/span&gt; &lt;span class="info-box-number"&gt;
+                                        10
+                                        &lt;small&gt;%&lt;/small&gt; &lt;/span&gt; &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-12 col-sm-6 col-md-3"&gt;
+                            &lt;div class="info-box shadow-sm"&gt; &lt;span class="info-box-icon text-bg-success shadow-sm"&gt; &lt;i class="bi bi-cart-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Sales&lt;/span&gt; &lt;span class="info-box-number"&gt;760&lt;/span&gt; &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt; &lt;!-- fix for small devices only --&gt; &lt;!-- &lt;div class="clearfix hidden-md-up"&gt;&lt;/div&gt; --&gt;
+                        &lt;div class="col-12 col-sm-6 col-md-3"&gt;
+                            &lt;div class="info-box shadow"&gt; &lt;span class="info-box-icon text-bg-warning shadow-sm"&gt; &lt;i class="bi bi-people-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;New Members&lt;/span&gt; &lt;span class="info-box-number"&gt;2,000&lt;/span&gt; &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-12 col-sm-6 col-md-3"&gt;
+                            &lt;div class="info-box shadow-lg"&gt; &lt;span class="info-box-icon text-bg-danger shadow-sm"&gt; &lt;i class="bi bi-hand-thumbs-up-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Likes&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt; &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                    &lt;/div&gt; &lt;!--end::Row--&gt; &lt;!-- =========================================================== --&gt;
+                    &lt;h5 class="mt-4 mb-2"&gt;Info Box With &lt;code&gt;bg-*&lt;/code&gt;&lt;/h5&gt; &lt;!--begin::Row--&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-md-3 col-sm-6 col-12"&gt;
+                            &lt;div class="info-box text-bg-primary"&gt; &lt;span class="info-box-icon"&gt; &lt;i class="bi bi-bookmark-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Bookmarks&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt;
+                                    &lt;div class="progress"&gt;
+                                        &lt;div class="progress-bar" style="width: 70%"&gt;&lt;/div&gt;
+                                    &lt;/div&gt; &lt;span class="progress-description"&gt;
+                                        70% Increase in 30 Days
+                                    &lt;/span&gt;
+                                &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3 col-sm-6 col-12"&gt;
+                            &lt;div class="info-box text-bg-success"&gt; &lt;span class="info-box-icon"&gt; &lt;i class="bi bi-hand-thumbs-up"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Likes&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt;
+                                    &lt;div class="progress"&gt;
+                                        &lt;div class="progress-bar" style="width: 70%"&gt;&lt;/div&gt;
+                                    &lt;/div&gt; &lt;span class="progress-description"&gt;
+                                        70% Increase in 30 Days
+                                    &lt;/span&gt;
+                                &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3 col-sm-6 col-12"&gt;
+                            &lt;div class="info-box text-bg-warning"&gt; &lt;span class="info-box-icon"&gt; &lt;i class="bi bi-calendar3"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Events&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt;
+                                    &lt;div class="progress"&gt;
+                                        &lt;div class="progress-bar" style="width: 70%"&gt;&lt;/div&gt;
+                                    &lt;/div&gt; &lt;span class="progress-description"&gt;
+                                        70% Increase in 30 Days
+                                    &lt;/span&gt;
+                                &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3 col-sm-6 col-12"&gt;
+                            &lt;div class="info-box text-bg-danger"&gt; &lt;span class="info-box-icon"&gt; &lt;i class="bi bi-chat-text-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Comments&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt;
+                                    &lt;div class="progress"&gt;
+                                        &lt;div class="progress-bar" style="width: 70%"&gt;&lt;/div&gt;
+                                    &lt;/div&gt; &lt;span class="progress-description"&gt;
+                                        70% Increase in 30 Days
+                                    &lt;/span&gt;
+                                &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                    &lt;/div&gt; &lt;!--end::Row--&gt; &lt;!-- =========================================================== --&gt;
+                    &lt;h5 class="mt-4 mb-2"&gt;Info Box With &lt;code&gt;bg-gradient&lt;/code&gt;&lt;/h5&gt; &lt;!--begin::Row--&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-md-3 col-sm-6 col-12"&gt;
+                            &lt;div class="info-box text-bg-primary bg-gradient"&gt; &lt;span class="info-box-icon"&gt; &lt;i class="bi bi-bookmark-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Bookmarks&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt;
+                                    &lt;div class="progress"&gt;
+                                        &lt;div class="progress-bar" style="width: 70%"&gt;&lt;/div&gt;
+                                    &lt;/div&gt; &lt;span class="progress-description"&gt;
+                                        70% Increase in 30 Days
+                                    &lt;/span&gt;
+                                &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3 col-sm-6 col-12"&gt;
+                            &lt;div class="info-box text-bg-success bg-gradient"&gt; &lt;span class="info-box-icon"&gt; &lt;i class="bi bi-hand-thumbs-up"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Likes&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt;
+                                    &lt;div class="progress"&gt;
+                                        &lt;div class="progress-bar" style="width: 70%"&gt;&lt;/div&gt;
+                                    &lt;/div&gt; &lt;span class="progress-description"&gt;
+                                        70% Increase in 30 Days
+                                    &lt;/span&gt;
+                                &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3 col-sm-6 col-12"&gt;
+                            &lt;div class="info-box text-bg-warning bg-gradient"&gt; &lt;span class="info-box-icon"&gt; &lt;i class="bi bi-calendar3"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Events&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt;
+                                    &lt;div class="progress"&gt;
+                                        &lt;div class="progress-bar" style="width: 70%"&gt;&lt;/div&gt;
+                                    &lt;/div&gt; &lt;span class="progress-description"&gt;
+                                        70% Increase in 30 Days
+                                    &lt;/span&gt;
+                                &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                        &lt;div class="col-md-3 col-sm-6 col-12"&gt;
+                            &lt;div class="info-box text-bg-danger bg-gradient"&gt; &lt;span class="info-box-icon"&gt; &lt;i class="bi bi-chat-text-fill"&gt;&lt;/i&gt; &lt;/span&gt;
+                                &lt;div class="info-box-content"&gt; &lt;span class="info-box-text"&gt;Comments&lt;/span&gt; &lt;span class="info-box-number"&gt;41,410&lt;/span&gt;
+                                    &lt;div class="progress"&gt;
+                                        &lt;div class="progress-bar" style="width: 70%"&gt;&lt;/div&gt;
+                                    &lt;/div&gt; &lt;span class="progress-description"&gt;
+                                        70% Increase in 30 Days
+                                    &lt;/span&gt;
+                                &lt;/div&gt; &lt;!-- /.info-box-content --&gt;
+                            &lt;/div&gt; &lt;!-- /.info-box --&gt;
+                        &lt;/div&gt; &lt;!-- /.col --&gt;
+                    &lt;/div&gt; &lt;!--end::Row--&gt;
+                &lt;/div&gt;</value>
+  </data>
+  <data name="InfoBox.Content" xml:space="preserve">
+    <value>Info Box</value>
+  </data>
+  <data name="SmallBox.Title" xml:space="preserve">
+    <value>Small Box</value>
+  </data>
+  <data name="SmallBox.Content" xml:space="preserve">
+    <value>&lt;!-- SmallBox Section --&gt;
+&lt;section id="smallbox" class="smallbox section"&gt;
+ &lt;div class="row"&gt;
+  &lt;div class="col-lg-3 col-6"&gt; &lt;!-- small box --&gt;
+   &lt;div class="small-box text-bg-primary"&gt;
+    &lt;div class="inner"&gt;
+     &lt;h3&gt;150&lt;/h3&gt;
+     &lt;p&gt;New Orders&lt;/p&gt;
+    &lt;/div&gt; &lt;svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"&gt;
+     &lt;path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"&gt;&lt;/path&gt;
+    &lt;/svg&gt; &lt;a href="#" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"&gt;
+     More info &lt;i class="bi bi-link-45deg"&gt;&lt;/i&gt; &lt;/a&gt;
+   &lt;/div&gt;
+  &lt;/div&gt; &lt;!-- ./col --&gt;
+  &lt;div class="col-lg-3 col-6"&gt; &lt;!-- small box --&gt;
+   &lt;div class="small-box text-bg-success"&gt;
+    &lt;div class="inner"&gt;
+     &lt;h3&gt;53&lt;sup class="fs-5"&gt;%&lt;/sup&gt;&lt;/h3&gt;
+     &lt;p&gt;Bounce Rate&lt;/p&gt;
+    &lt;/div&gt; &lt;svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"&gt;
+     &lt;path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"&gt;&lt;/path&gt;
+    &lt;/svg&gt; &lt;a href="#" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"&gt;
+     More info &lt;i class="bi bi-link-45deg"&gt;&lt;/i&gt; &lt;/a&gt;
+   &lt;/div&gt;
+  &lt;/div&gt; &lt;!-- ./col --&gt;
+  &lt;div class="col-lg-3 col-6"&gt; &lt;!-- small box --&gt;
+   &lt;div class="small-box text-bg-warning"&gt;
+    &lt;div class="inner"&gt;
+     &lt;h3&gt;44&lt;/h3&gt;
+     &lt;p&gt;User Registrations&lt;/p&gt;
+    &lt;/div&gt; &lt;svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"&gt;
+     &lt;path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"&gt;&lt;/path&gt;
+    &lt;/svg&gt; &lt;a href="#" class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover"&gt;
+     More info &lt;i class="bi bi-link-45deg"&gt;&lt;/i&gt; &lt;/a&gt;
+   &lt;/div&gt;
+  &lt;/div&gt; &lt;!-- ./col --&gt;
+  &lt;div class="col-lg-3 col-6"&gt; &lt;!-- small box --&gt;
+   &lt;div class="small-box text-bg-danger"&gt;
+    &lt;div class="inner"&gt;
+     &lt;h3&gt;65&lt;/h3&gt;
+     &lt;p&gt;Unique Visitors&lt;/p&gt;
+    &lt;/div&gt; &lt;svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"&gt;
+     &lt;path clip-rule="evenodd" fill-rule="evenodd" d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z"&gt;&lt;/path&gt;
+     &lt;path clip-rule="evenodd" fill-rule="evenodd" d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z"&gt;&lt;/path&gt;
+    &lt;/svg&gt; &lt;a href="#" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"&gt;
+     More info &lt;i class="bi bi-link-45deg"&gt;&lt;/i&gt; &lt;/a&gt;
+   &lt;/div&gt;
+  &lt;/div&gt; &lt;!-- ./col --&gt;
+ &lt;/div&gt;   
+&lt;/section&gt;
+&lt;!-- End SmallBox Section --&gt;</value>
+  </data>
+</root>

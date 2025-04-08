@@ -1,0 +1,530 @@
+@namespace codeXpert.Theme.AdminLTE
+@inherits ModuleBase
+@implements Oqtane.Interfaces.ISettingsControl
+@inject ISettingService SettingService
+@inject IStringLocalizer<ThemeSettings> Localizer
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+@attribute [OqtaneIgnore]
+
+<div class="container">
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="scope" ResourceKey="Scope" ResourceType="@resourceType" HelpText="Specify if the settings are applicable to this page or the entire site.">Setting Scope:</Label>
+        <div class="col-sm-9">
+            <select id="scope" class="form-select" value="@_scope" @onchange="(e => ScopeChanged(e))">
+                @if (UserSecurity.IsAuthorized(PageState.User, RoleNames.Admin))
+                {
+                    <option value="site">@Localizer["Site"]</option>
+                }
+                <option value="page">@Localizer["Page"]</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="login" ResourceKey="Login" ResourceType="@resourceType" HelpText="Specify if a Login option should be displayed. Note that this option does not prevent the login page from being accessible via a direct url.">Show Login?</Label>
+        <div class="col-sm-9">
+            <select id="login" class="form-select" @bind="@_login">
+                <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                <option value="true">@SharedLocalizer["Yes"]</option>
+                <option value="false">@SharedLocalizer["No"]</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="register" ResourceKey="Register" ResourceType="@resourceType" HelpText="Specify if a Register option should be displayed. Note that this option is also dependent on the Allow Registration option in Site Settings.">Show Register?</Label>
+        <div class="col-sm-9">
+            <select id="register" class="form-select" @bind="@_register">
+                <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                <option value="true">@SharedLocalizer["Yes"]</option>
+                <option value="false">@SharedLocalizer["No"]</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="pagetitle" ResourceKey="pagetitle" ResourceType="@resourceType" HelpText="Specify if the pagetitle should be displayed.">Show Pagetitle?</Label>
+        <div class="col-sm-9">
+            <select id="pagetitle" class="form-select" @bind="@_pagetitle">
+                <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                <option value="true">@SharedLocalizer["Yes"]</option>
+                <option value="false">@SharedLocalizer["No"]</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="breadcrumbs" ResourceKey="Breadcrumbs" ResourceType="@resourceType" HelpText="Specify if the Breadcrumbs should be displayed.">Show Breadcrumbs?</Label>
+        <div class="col-sm-9">
+            <select id="breadcrumbs" class="form-select" @bind="@_breadcrumbs">
+                <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                <option value="true">@SharedLocalizer["Yes"]</option>
+                <option value="false">@SharedLocalizer["No"]</option>
+            </select>
+        </div>
+    </div>
+</div>
+    <Section Name="Theme" Heading="Theme" ResourceKey="Theme">
+        <div class="container">
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="themecolor" ResourceKey="ThemeColor" ResourceType="@resourceType" HelpText="Specify the color of the theme how it should be displayed.">Theme Color?</Label>
+                <div class="col-sm-9">
+                    <select id="themecolor" class="form-select" @bind="@_themeColor">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="light">@SharedLocalizer["Light"]</option>
+                        <option value="dark">@SharedLocalizer["Dark"]</option>
+                        <option value="custom">@SharedLocalizer["Custom"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="compact" ResourceKey="Compact" ResourceType="@resourceType" HelpText="Specify if the theme should be in compact mode.">Compact Mode?</Label>
+                <div class="col-sm-9">
+                    <select id="compact" class="form-select" @bind="@_compact">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </Section>
+
+    <Section Name="ThemeHeader" Heading="Header" ResourceKey="ThemeHeader">
+        <div class="container">
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="fixedHeader" ResourceKey="FixedHeader" ResourceType="@resourceType" HelpText="Specify if the header should be fixed.">Fixed Header?</Label>
+                <div class="col-sm-9">
+                    <select id="fixedHeader" class="form-select" @bind="@_fixedHeader">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="showBorder" ResourceKey="ThemeColor" ResourceType="@resourceType" HelpText="Specify if the (bottom) border should be shown.">Show Border?</Label>
+                <div class="col-sm-9">
+                    <select id="showBorder" class="form-select" @bind="@_showBorder">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </Section>
+
+
+    <Section Name="SidebarOptions" Heading="Sidebar Options" ResourceKey="SidebarOptions">
+        <div class="container">
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="collapsedSidebar" ResourceKey="CollapsedSidebar" ResourceType="@resourceType" HelpText="Specify if the sidebar should be collapsed.">Collapsed Sidebar?</Label>
+                <div class="col-sm-9">
+                    <select id="collapsedSidebar" class="form-select" @bind="@_collapsedSidebar">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="fixedSidebar" ResourceKey="FixedSidebar" ResourceType="@resourceType" HelpText="Specify if the sidebar should be fixed.">Fixed Sidebar?</Label>
+                <div class="col-sm-9">
+                    <select id="fixedSidebar" class="form-select" @bind="@_fixedSidebar">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="sidebar" ResourceKey="Sidebar" ResourceType="@resourceType" HelpText="Specify the sidebar style.">Sidebar Style?</Label>
+                <div class="col-sm-9">
+                    <select id="sidebar" class="form-select" @bind="@_sidebar">
+                        <option value="sidebar-expand-lg">@SharedLocalizer["Default"]</option>
+                        <option value="sidebar-expand-lg sidebar-mini">@SharedLocalizer["Mini"]</option>
+                        <option value="sidebar-expand-lg sidebar-mini logoswitch">@SharedLocalizer["Mini & Logo Switch"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="sidebarShadow" ResourceKey="SidebarShadow" ResourceType="@resourceType" HelpText="Specify if the sidebar has a shadow.">Show Shadow?</Label>
+                <div class="col-sm-9">
+                    <select id="sidebarShadow" class="form-select" @bind="@_sidebarShadow">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="childIndent" ResourceKey="ChildIndent" ResourceType="@resourceType" HelpText="Specify the sidebar child indent.">Child Indent?</Label>
+                <div class="col-sm-9">
+                    <select id="childIndent" class="form-select" @bind="@_childIndent">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="navCompact" ResourceKey="NavCompact" ResourceType="@resourceType" HelpText="Specify if the sidebar should be compact.">Compact Mode?</Label>
+                <div class="col-sm-9">
+                    <select id="navCompact" class="form-select" @bind="@_navCompact">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </Section>
+
+    <Section Name="ThemeFooter" Heading="Footer" ResourceKey="ThemeFooter">
+        <div class="container">
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="fixedFooter" ResourceKey="FixedFooter" ResourceType="@resourceType" HelpText="Specify if the footer should be fixed.">Fixed Footer?</Label>
+                <div class="col-sm-9">
+                    <select id="fixedFooter" class="form-select" @bind="@_fixedFooter">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </Section>
+
+    <Section Name="SmallTextOptions" Heading="Small Text Options" ResourceKey="SmallTextOptions">
+        <div class="container">
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="smallTextBody" ResourceKey="SmallTextBody" ResourceType="@resourceType" HelpText="Small body text.">Body?</Label>
+                <div class="col-sm-9">
+                    <select id="smallTextBody" class="form-select" @bind="@_smallBody">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="smallNavbar" ResourceKey="SmallNavbar" ResourceType="@resourceType" HelpText="Small navigation bar text.">Navbar?</Label>
+                <div class="col-sm-9">
+                    <select id="smallNavbar" class="form-select" @bind="@_smallNavbar">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="smallFooter" ResourceKey="SmallFooter" ResourceType="@resourceType" HelpText="Small footer.">Footer?</Label>
+                <div class="col-sm-9">
+                    <select id="smallFooter" class="form-select" @bind="@_smallFooter">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1 align-items-center">
+                <Label Class="col-sm-3" For="smallLogo" ResourceKey="SmallLogo" ResourceType="@resourceType" HelpText="Small logo and Sidebar Menu.">Sidebar & Logo?</Label>
+                <div class="col-sm-9">
+                    <select id="smallLogo" class="form-select" @bind="@_smallLogo">
+                        <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                        <option value="true">@SharedLocalizer["Yes"]</option>
+                        <option value="false">@SharedLocalizer["No"]</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </Section>
+
+@code {
+    private int pageId = -1;
+    private string resourceType = "codeXpert.Theme.AdminLTE.ThemeSettings, codeXpert.Theme.AdminLTE.Client.Oqtane"; // for localization
+    private string _scope = "page";
+    private string _login = "-";
+    private string _register = "-";
+    private string _pagetitle = "-";
+    private string _breadcrumbs = "-";
+    private string _themeColor = "-";
+    private string _compact = "-";
+    private string _fixedHeader = "-";
+    private string _showBorder = "-";
+    private string _collapsedSidebar = "-";
+    private string _fixedSidebar = "-";
+    private string _sidebar = "-";
+    private string _sidebarShadow = "-";
+    private string _childIndent = "-";
+    private string _navCompact = "-";
+    private string _fixedFooter = "-";
+    private string _smallBody = "-";
+    private string _smallNavbar = "-";
+    private string _smallFooter = "-";
+    private string _smallLogo = "-";
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (PageState.QueryString.ContainsKey("id"))
+        {
+            pageId = int.Parse(PageState.QueryString["id"]);
+        }
+
+        try
+        {
+            await LoadSettings();
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Loading Settings {Error}", ex.Message);
+            AddModuleMessage("Error Loading Settings", MessageType.Error);
+        }
+    }
+
+    private async Task LoadSettings()
+    {
+        if (_scope == "site")
+        {
+            var settings = PageState.Site.Settings;
+            _login = SettingService.GetSetting(settings, GetType().Namespace + ":Login", "true");
+            _register = SettingService.GetSetting(settings, GetType().Namespace + ":Register", "true");
+            _pagetitle = SettingService.GetSetting(settings, GetType().Namespace + ":Pagetitle", "true");
+            _breadcrumbs = SettingService.GetSetting(settings, GetType().Namespace + ":Breadcrumbs", "true");
+            _themeColor = SettingService.GetSetting(settings, GetType().Namespace + ":ThemeColor", "true");
+            _compact = SettingService.GetSetting(settings, GetType().Namespace + ":Compact", "true");
+            _sidebar = SettingService.GetSetting(settings, GetType().Namespace + ":Sidebar", "true");
+            _fixedHeader = SettingService.GetSetting(settings, GetType().Namespace + ":FixedHeader", "true");
+            _fixedSidebar = SettingService.GetSetting(settings, GetType().Namespace + ":FixedSidebar", "true");
+            _fixedFooter = SettingService.GetSetting(settings, GetType().Namespace + ":FixedFooter", "true");
+            _showBorder = SettingService.GetSetting(settings, GetType().Namespace + ":ShowBorder", "true");
+            _sidebarShadow = SettingService.GetSetting(settings, GetType().Namespace + ":SidebarShadow", "true");
+            _childIndent = SettingService.GetSetting(settings, GetType().Namespace + ":ChildIndent", "true");
+            _navCompact = SettingService.GetSetting(settings, GetType().Namespace + ":NavCompact", "true");
+            _collapsedSidebar = SettingService.GetSetting(settings, GetType().Namespace + ":CollapsedSidebar", "true");
+            _smallBody = SettingService.GetSetting(settings, GetType().Namespace + ":SmallBody", "true");
+            _smallNavbar = SettingService.GetSetting(settings, GetType().Namespace + ":SmallNavbar", "true");
+            _smallFooter = SettingService.GetSetting(settings, GetType().Namespace + ":SmallFooter", "true");
+            _smallLogo = SettingService.GetSetting(settings, GetType().Namespace + ":SmallLogo", "true");
+        }
+        else
+        {
+            var settings = await SettingService.GetPageSettingsAsync(pageId);
+            settings = SettingService.MergeSettings(PageState.Site.Settings, settings);
+            _login = SettingService.GetSetting(settings, GetType().Namespace + ":Login", "-");
+            _register = SettingService.GetSetting(settings, GetType().Namespace + ":Register", "-");
+            _pagetitle = SettingService.GetSetting(settings, GetType().Namespace + ":Pagetitle", "-");
+            _breadcrumbs = SettingService.GetSetting(settings, GetType().Namespace + ":Breadcrumbs", "-");
+            _themeColor = SettingService.GetSetting(settings, GetType().Namespace + ":ThemeColor", "-");
+            _compact = SettingService.GetSetting(settings, GetType().Namespace + ":Compact", "-");
+            _sidebar = SettingService.GetSetting(settings, GetType().Namespace + ":Sidebar", "-");
+            _fixedHeader = SettingService.GetSetting(settings, GetType().Namespace + ":FixedHeader", "-");
+            _fixedSidebar = SettingService.GetSetting(settings, GetType().Namespace + ":FixedSidebar", "-");
+            _fixedFooter = SettingService.GetSetting(settings, GetType().Namespace + ":FixedFooter", "-");
+            _showBorder = SettingService.GetSetting(settings, GetType().Namespace + ":ShowBorder", "-");
+            _sidebarShadow = SettingService.GetSetting(settings, GetType().Namespace + ":SidebarShadow", "-");
+            _childIndent = SettingService.GetSetting(settings, GetType().Namespace + ":ChildIndent", "-");
+            _navCompact = SettingService.GetSetting(settings, GetType().Namespace + ":NavCompact", "-");
+            _collapsedSidebar = SettingService.GetSetting(settings, GetType().Namespace + ":CollapsedSidebar", "-");
+            _smallBody = SettingService.GetSetting(settings, GetType().Namespace + ":SmallBody", "-");
+            _smallNavbar = SettingService.GetSetting(settings, GetType().Namespace + ":SmallNavbar", "-");
+            _smallFooter = SettingService.GetSetting(settings, GetType().Namespace + ":SmallFooter", "-");
+            _smallLogo = SettingService.GetSetting(settings, GetType().Namespace + ":SmallLogo", "-");
+        }
+        await Task.Yield();
+    }
+
+    private async Task ScopeChanged(ChangeEventArgs eventArgs)
+    {
+        try
+        {
+            _scope = (string)eventArgs.Value;
+            await LoadSettings();
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Loading Settings {Error}", ex.Message);
+            AddModuleMessage("Error Loading Settings", MessageType.Error);
+        }
+    }
+
+    public async Task UpdateSettings()
+    {
+        try
+        {
+            if (_scope == "site")
+            {
+                var settings = await SettingService.GetSiteSettingsAsync(PageState.Site.SiteId);
+                if (_login != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Login", _login);
+                }
+                if (_register != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Register", _register);
+                }
+                if (_pagetitle != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Pagetitle", _pagetitle);
+                }
+                if (_breadcrumbs != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Breadcrumbs", _breadcrumbs);
+                }
+                if (_themeColor != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":ThemeColor", _themeColor);
+                }
+                if (_compact != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Compact", _compact);
+                }
+                if (_sidebar != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Sidebar", _sidebar);
+                }
+                if (_fixedHeader != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":FixedHeader", _fixedHeader);
+                }
+                if (_fixedSidebar != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":FixedSidebar", _fixedSidebar);
+                }
+                if (_fixedFooter != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":FixedFooter", _fixedFooter);
+                }
+                if (_showBorder != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":ShowBorder", _showBorder);
+                }
+                if (_sidebarShadow != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SidebarShadow", _sidebarShadow);
+                }
+                if (_collapsedSidebar != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":CollapsedSidebar", _collapsedSidebar);
+                }
+                if (_childIndent != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":ChildIndent", _childIndent);
+                }
+                if (_navCompact != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":NavCompact", _navCompact);
+                }
+                if (_smallBody != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SmallBody", _smallBody);
+                }
+                if (_smallNavbar != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SmallNavbar", _smallNavbar);
+                }
+                if (_smallFooter != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SmallFooter", _smallFooter);
+                }
+                if (_smallLogo != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SmallLogo", _smallLogo);
+                }
+                await SettingService.UpdateSiteSettingsAsync(settings, PageState.Site.SiteId);
+            }
+            else
+            {
+                var settings = await SettingService.GetPageSettingsAsync(pageId);
+                if (_login != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Login", _login);
+                }
+                if (_register != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Register", _register);
+                }
+                if (_pagetitle != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Pagetitle", _pagetitle);
+                }
+                if (_breadcrumbs != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Breadcrumbs", _breadcrumbs);
+                }
+                if (_themeColor != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":ThemeColor", _themeColor);
+                }
+                if (_compact != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Compact", _compact);
+                }
+                if (_sidebar != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":Sidebar", _sidebar);
+                }
+                if (_fixedHeader != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":FixedHeader", _fixedHeader);
+                }
+                if (_fixedSidebar != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":FixedSidebar", _fixedSidebar);
+                }
+                if (_fixedFooter != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":FixedFooter", _fixedFooter);
+                }
+                if (_showBorder != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":ShowBorder", _showBorder);
+                }
+                if (_sidebarShadow != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SidebarShadow", _sidebarShadow);
+                }
+                if (_collapsedSidebar != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":CollapsedSidebar", _collapsedSidebar);
+                }
+                if (_childIndent != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":ChildIndent", _childIndent);
+                }
+                if (_navCompact != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":NavCompact", _navCompact);
+                }
+                if (_smallBody != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SmallBody", _smallBody);
+                }
+                if (_smallNavbar != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SmallNavbar", _smallNavbar);
+                }
+                if (_smallFooter != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SmallFooter", _smallFooter);
+                }
+                if (_smallLogo != "-")
+                {
+                    settings = SettingService.SetSetting(settings, GetType().Namespace + ":SmallLogo", _smallLogo);
+                }
+                await SettingService.UpdatePageSettingsAsync(settings, pageId);
+            }
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Saving Settings {Error}", ex.Message);
+            AddModuleMessage("Error Saving Settings", MessageType.Error);
+        }
+    }
+}

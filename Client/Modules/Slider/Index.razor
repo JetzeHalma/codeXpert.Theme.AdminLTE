@@ -1,0 +1,36 @@
+﻿@using Oqtane.Modules.HtmlText.Services
+@using Oqtane.Modules.HtmlText.Models
+
+@namespace codeXpert.Module.AdminLTE.Slider
+@inherits ModuleBase
+@inject NavigationManager NavigationManager
+@inject IHtmlTextService HtmlTextService
+@inject IModuleService ModuleService
+@inject IPageModuleService PageModuleService
+@inject IStringLocalizer<Index> Localizer
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var typename = Utilities.GetTypeNameLastSegment(GetType().ToString(), 1);
+
+        // populate HtmlText module with default content
+        var htmltext = new HtmlText();
+        htmltext.ModuleId = ModuleState.ModuleId;
+        htmltext.Content = Localizer[typename + ".Content"];
+        await HtmlTextService.AddHtmlTextAsync(htmltext);
+
+        // change module definition to HtmlText
+        var module = await ModuleService.GetModuleAsync(ModuleState.ModuleId);
+        module.ModuleDefinitionName = "Oqtane.Modules.HtmlText, Oqtane.Client";
+        await ModuleService.UpdateModuleAsync(module);
+
+        // update page module title
+        var pagemodule = await PageModuleService.GetPageModuleAsync(ModuleState.PageModuleId);
+        pagemodule.Title = Localizer[typename + ".Title"];
+        await PageModuleService.UpdatePageModuleAsync(pagemodule);
+
+        // refresh page
+        NavigationManager.NavigateTo(Utilities.NavigateUrl(PageState.Alias.Path, PageState.Page.Path, ""));
+    }
+}
